@@ -12,7 +12,7 @@ on:
 
 env:
   # sycl is not included. Add it manually if you need
-  WORKLOADS: python,numpy,dpnp,numba_n,numba_np,numba_npr,numba_dpex_k,numba_dpex_n,numba_dpex_p
+  WORKLOADS: python,numpy,dpnp
   PYTHONIOENCODING: 'utf-8'
 
 jobs:
@@ -151,12 +151,6 @@ jobs:
       - name: Build dpbench
         if: matrix.install == 'setup.py'
         run: python setup.py develop
-
-      - name: Configure dpbench
-        shell: bash -el {0}
-        run: |
-          # Turn off numba-dpex autofall back
-          echo "NUMBA_DPEX_FALLBACK_ON_CPU=0" >> "GITHUB_ENV"
 
       - name: Setup OpenCL CPU device
         if: runner.os == 'Windows'

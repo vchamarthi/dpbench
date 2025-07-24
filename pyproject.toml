@@ -38,13 +38,10 @@ dependencies = [
     "numpy>=1.24.0",
     "dpctl>=0.16.1",
     "dpnp>=0.14.0",
-    "numba>=0.59.0",
-    "numba_dpex>=0.23.0a0",
 ]
 dynamic = ["version"]
 
 [project.optional-dependencies]
-numba-mlir = ["numba_mlir"]
 color-config = ["pygments"]
 npbench = ["dace", "dask", "legate"]
 json-to-toml = ["tomli_w"]

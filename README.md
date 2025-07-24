@@ -9,13 +9,10 @@ SPDX-License-Identifier: Apache-2.0
 
 # DPBench - Benchmarks to evaluate Data-Parallel Extensions for Python
 
-* **\<benchmark\>\_numba\_\<mode\>.py** : This file contains Numba implementations of the benchmarks. There are three modes: nopython-mode, nopython-mode-parallel and nopython-mode-parallel-range.
-* **\<benchmark\>\_numba_dpex\_\<mode\>.py** : This file contains Numba-Dpex implementations of the benchmarks. There are three modes: kernel-mode, numpy-mode and prange-mode.
 * **\<benchmark\>\_dpnp\_\<mode\>.py** : This file contains dpnp implementations of the benchmarks.
 * **\<benchmark\>\_native_ext/\<benchmark\>\_sycl/_\<benchmark\>_kernel.hpp** : This file contains native dpcpp implementations of the benchmarks.
 * **\<benchmark\>\_numpy.py** : This file contains numpy implementations of the benchmarks. It should take benefits of numpy arrays and should avoid loops over arrays.
 * **\<benchmark\>\_python.py** : This file contains naive python implementations of the benchmarks. Should be run only for small presets, otherwise it will take long execution time.
-* **\<benchmark\>\_numba_mlir\_\<mode\>.py** : This file contains Numba-MLIR implementations of the benchmarks. There are three modes: kernel-mode, numpy-mode and prange-mode. Experimental.
 
 ## Examples of setting up and running the benchmarks
 
@@ -105,7 +102,7 @@ SPDX-License-Identifier: Apache-2.0
    the framework uses for execution. The `sycl_device` value should be
    a legal [SYCL device filter
    ](https://intel.github.io/llvm-docs/EnvironmentVariables.html#sycl_device_filter)
-   string. The dpcpp, dpnp, and numba_dpex frameworks support the
+   string. The dpcpp, dpnp frameworks support the
    sycl_device option.
 
    Here is an example:

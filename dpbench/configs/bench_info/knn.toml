@@ -33,8 +33,6 @@ output_args = [
     "predictions",
 ]
 
-expected_failure_implementations = ["numba_dpex_p"]
-
 [benchmark.parameters.S]
 test_size = 1024
 train_size = 1024

@@ -76,9 +76,6 @@ class Framework(object):
 
         pkg_name = self.fname
 
-        if self.fname == "numba_cuda":
-            pkg_name = "numba"
-
         try:
             return pkg_resources.get_distribution(pkg_name).version
         except pkg_resources.DistributionNotFound:

@@ -18,10 +18,6 @@ from .frameworks import (
     DpcppFramework,
     DpnpFramework,
     Framework,
-    NumbaCudaFramework,
-    NumbaDpexFramework,
-    NumbaFramework,
-    NumbaMlirFramework,
 )
 from .reporter import (
     generate_comparison_report,
@@ -37,12 +33,8 @@ __all__ = [
     "Benchmark",
     "BenchmarkResults",
     "Framework",
-    "NumbaFramework",
-    "NumbaDpexFramework",
-    "NumbaMlirFramework",
     "DpnpFramework",
     "CupyFramework",
-    "NumbaCudaFramework",
     "DpcppFramework",
     "create_connection",
     "create_results_table",
