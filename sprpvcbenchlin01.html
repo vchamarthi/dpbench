@@ -1,0 +1,558 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>System Health Inspector</title>
+    <link rel="icon" type="image/x-icon" href="https://www.intel.com/favicon.ico">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css"
+        integrity="sha384-M86HUGbBFILBBZ9ykMAbT3nVb0+2C7yZlF8X2CiKNpDOQjKroMJqIeGZ/Le8N2Qp" crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+        integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/d3-flame-graph@4.1.3/dist/d3-flamegraph.css">
+    <script type="text/javascript" src="https://d3js.org/d3.v7.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/d3-flame-graph@4.1.3/dist/d3-flamegraph.min.js"></script>
+    <script src="https://unpkg.com/chart.js@3.7.1/dist/chart.min.js"
+        integrity="sha384-7NrRHqlWUj2hJl3a/dZj/a1GxuQc56mJ3aYsEnydBYrY1jR+RSt6SBvK3sHfj+mJ" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+
+    <style>
+        .content {
+            padding: 0 2em;
+            line-height: 1.6em;
+        }
+
+        .content h2 {
+            font-weight: 300;
+            color: #888;
+        }
+
+        .content h2:before {
+            content: '';
+            display: block;
+            position: relative;
+            width: 0;
+            height: 5em;
+            margin-top: -5em
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            background-color: whitesmoke;
+            z-index: 99;
+            width: 100%;
+            text-align: center;
+            margin: 0;
+            color: #07578c;
+            border-bottom: 1px solid #eee;
+        }
+
+        header h1 {
+            margin: 0.2em 0;
+            font-size: 3em;
+            font-weight: 300;
+        }
+
+         
+        .tab {
+            position: fixed;
+            top: 67px;
+            z-index: 99;
+            height: 46px;
+            width: 100%;
+            background-color: #f5f5f5;
+        }
+
+         
+        .tab button {
+            background-color: inherit;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            background-color: #ccc;
+            width: 175px;
+        }
+
+         
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+         
+        .tab button.active {
+            background-color: #fff;
+        }
+
+         
+        .tabcontent {
+            position: relative;
+            top: 115px;
+            display: none;
+            padding: 0px 0px;
+        }
+
+        .tabdefault {
+            display: block;
+        }
+
+        .tabnotdefault {
+        }
+
+        .master {
+            overflow: hidden;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 113px;   
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            padding-left: 0px;
+        }
+
+        .sidebar h1 {
+            position: absolute;
+            top: 0;
+            padding: 0px 8px 8px 35px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #1f8dd6;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a {
+            padding: 8px 8px 8px 35px;
+            text-decoration: none;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidebar .togglebtn {
+            position: absolute;
+            top: 0;
+            right: 0px;
+            font-size: 25px;
+            padding-left: 5px;
+            color: #ccc;
+            background-color: #1f8dd6;
+        }
+
+        .sidebar .togglebtn:hover {
+            color: #666;
+        }
+
+        #myConfigurationContent {
+            transition: margin-left .5s;
+        }
+    </style>
+    <noscript>
+        <style type="text/css">
+            .tabcontent {display:block;}
+            .tabnotdefault {left: 140px;}
+        </style>
+    </noscript>
+</head>
+
+<body>
+    <header>
+        <h1>Intel&reg; System Health Inspector</h1>
+    </header>
+    <nav class="tab">
+        
+        
+        <button class="tablinks" onclick='openTab(event, &#34;ConfigurationContent&#34;)'  id="defaultOpen" >Configuration</button>
+        
+        <button class="tablinks" onclick='openTab(event, &#34;BenchmarkContent&#34;)' >Benchmark</button>
+        
+        <button class="tablinks" onclick='openTab(event, &#34;ProfileContent&#34;)' >Profile</button>
+        
+        <button class="tablinks" onclick='openTab(event, &#34;AnalyzeContent&#34;)' >Analyze</button>
+        
+        <button class="tablinks" onclick='openTab(event, &#34;InsightsContent&#34;)' >Insights</button>
+        
+    </nav>
+    
+    
+        
+        <div id="ConfigurationContent" class="tabcontent tabdefault">
+            <main class="content">
+                <div id="mySidebar" class="sidebar">
+                    <a href="#" style="position: absolute;top: 0; padding-left: 7px; padding-right: 27px; color: #fff; background-color: #1f8dd6">CONTENTS</a>
+                    <a href="javascript:void(0)" class="togglebtn" onclick="toggleNav()">&lt;</a>
+                    <a href="#Host">System</a><a href="#BIOS">Software</a><a href="#CPU">CPU</a><a href="#Power">Power</a><a href="#Memory">Memory</a><a href="#NIC">Network</a><a href="#Disk">Storage</a><a href="#GPU">GPU</a><a href="#CXL Device">CXL</a><a href="#Vulnerability">Security</a><a href="#Process">Status</a>
+                </div>
+                <div id="myConfigurationContent">
+                    <noscript>
+                        <h3>JavaScript is disabled. Functionality is limited.</h3>
+                    </noscript>
+                    
+                    <h3></h3>
+                    
+                    
+                    <section>
+                        <h2 id="Host">Host</h2>
+<table class="pure-table pure-table-striped"><tbody><tr><td style="font-weight:bold">Name</td><td>sprpvcbenchlin01</td></tr><tr><td style="font-weight:bold">Time</td><td>Tue Jul 29 04:24:44 PM UTC 2025</td></tr></tbody></table>
+                    </section>
+                    
+                    <section>
+                        <h2 id="System">System</h2>
+No data found.
+                    </section>
+                    
+                    <section>
+                        <h2 id="Baseboard">Baseboard</h2>
+No data found.
+                    </section>
+                    
+                    <section>
+                        <h2 id="Chassis">Chassis</h2>
+No data found.
+                    </section>
+                    
+                    <section>
+                        <h2 id="PCIe Slots">PCIe Slots</h2>
+No data found.
+                    </section>
+                    
+                    <section>
+                        <h2 id="BIOS">BIOS</h2>
+No data found.
+                    </section>
+                    
+                    <section>
+                        <h2 id="Operating System">Operating System</h2>
+<table class="pure-table pure-table-striped"><tbody><tr><td style="font-weight:bold">OS</td><td>Ubuntu 22.04.5 LTS</td></tr><tr><td style="font-weight:bold">Kernel</td><td>5.15.0-124-generic</td></tr><tr><td style="font-weight:bold">Boot Parameters</td><td>BOOT_IMAGE=/boot/vmlinuz-5.15.0-124-generic root=UUID=251d71d4-950e-4c83-89e8-1e7b4dfea317 ro</td></tr><tr><td style="font-weight:bold">Microcode</td><td>0x2b0005c0</td></tr></tbody></table>
+                    </section>
+                    
+                    <section>
+                        <h2 id="Software Version">Software Version</h2>
+<table class="pure-table pure-table-striped"><tbody><tr><td style="font-weight:bold">GCC</td><td>gcc (Ubuntu 12.3.0-1ubuntu1~22.04) 12.3.0</td></tr><tr><td style="font-weight:bold">GLIBC</td><td>ldd (Ubuntu GLIBC 2.35-0ubuntu3.8) 2.35</td></tr><tr><td style="font-weight:bold">Binutils</td><td>GNU ld (GNU Binutils for Ubuntu) 2.38</td></tr><tr><td style="font-weight:bold">Python</td><td>Python 2.7.18</td></tr><tr><td style="font-weight:bold">Python3</td><td>Python 3.10.12</td></tr><tr><td style="font-weight:bold">Java</td><td>openjdk version &#34;1.8.0_422&#34;</td></tr><tr><td style="font-weight:bold">OpenSSL</td><td>OpenSSL 3.0.2 15 Mar 2022 (Library: OpenSSL 3.0.2 15 Mar 2022)</td></tr></tbody></table>
+                    </section>
+                    
+                    <section>
+                        <h2 id="CPU">CPU</h2>
+<table class="pure-table pure-table-striped"><tbody><tr><td style="font-weight:bold">CPU Model</td><td>Intel(R) Xeon(R) Platinum 8480+</td></tr><tr><td style="font-weight:bold">Architecture</td><td>x86_64</td></tr><tr><td style="font-weight:bold">Microarchitecture</td><td>SPR</td></tr><tr><td style="font-weight:bold">Family</td><td>6</td></tr><tr><td style="font-weight:bold">Model</td><td>143</td></tr><tr><td style="font-weight:bold">Stepping</td><td>8</td></tr><tr><td style="font-weight:bold">Base Frequency</td><td>2.0GHz</td></tr><tr><td style="font-weight:bold">Maximum Frequency</td><td>3.8GHz</td></tr><tr><td style="font-weight:bold">All-core Maximum Frequency</td><td></td></tr><tr><td style="font-weight:bold">CPUs</td><td>112</td></tr><tr><td style="font-weight:bold">On-line CPU List</td><td>0-111</td></tr><tr><td style="font-weight:bold">Hyperthreading</td><td>Disabled</td></tr><tr><td style="font-weight:bold">Cores per Socket</td><td>56</td></tr><tr><td style="font-weight:bold">Sockets</td><td>2</td></tr><tr><td style="font-weight:bold">NUMA Nodes</td><td>2</td></tr><tr><td style="font-weight:bold">NUMA CPU List</td><td>0-55 :: 56-111</td></tr><tr><td style="font-weight:bold">L1d Cache</td><td>5.3 MiB (112 instances)</td></tr><tr><td style="font-weight:bold">L1i Cache</td><td>3.5 MiB (112 instances)</td></tr><tr><td style="font-weight:bold">L2 Cache</td><td>224 MiB (112 instances)</td></tr><tr><td style="font-weight:bold">L3 Cache</td><td>210 MiB</td></tr><tr><td style="font-weight:bold">L3 per Core</td><td>1.875 MiB</td></tr><tr><td style="font-weight:bold">Memory Channels</td><td>8</td></tr><tr><td style="font-weight:bold">Prefetchers</td><td>None</td></tr><tr><td style="font-weight:bold">Intel Turbo Boost</td><td>Enabled</td></tr><tr><td style="font-weight:bold">Virtualization</td><td></td></tr><tr><td style="font-weight:bold">PPINs</td><td></td></tr></tbody></table>
+                    </section>
+                    
+                    <section>
+                        <h2 id="ISA">ISA</h2>
+<table class="pure-table pure-table-striped"><thead><tr><th>Name</th><th>Full Name</th><th>CPU Support</th></tr></thead><tbody><tr><td>AES</td><td>Advanced Encryption Standard New Instructions (AES-NI)</td><td>Yes</td></tr><tr><td>AMX</td><td>Advanced Matrix Extensions</td><td>Yes</td></tr><tr><td>AMX-COMPLEX</td><td>AMX-COMPLEX Instruction</td><td>No</td></tr><tr><td>AMX-FP16</td><td>AMX-FP16 Instruction</td><td>No</td></tr><tr><td>AVX-IFMA</td><td>AVX-IFMA Instruction</td><td>No</td></tr><tr><td>AVX-NE-CONVERT</td><td>AVX-NE-CONVERT Instruction</td><td>No</td></tr><tr><td>AVX-VNNI-INT8</td><td>AVX-VNNI-INT8 Instruction</td><td>No</td></tr><tr><td>AVX512F</td><td>AVX-512 Foundation</td><td>Yes</td></tr><tr><td>AVX512_BF16</td><td>Vector Neural Network Instructions - BF16</td><td>Yes</td></tr><tr><td>AVX512_FP16</td><td>Advanced Vector Extensions 512 - FP16</td><td>Yes</td></tr><tr><td>AVX512_VNNI</td><td>Vector Neural Network Instructions</td><td>Yes</td></tr><tr><td>CLDEMOTE</td><td>Cache Line Demote</td><td>Yes</td></tr><tr><td>CMPCCXADD</td><td>Compare and Add if Condition is Met</td><td>No</td></tr><tr><td>ENQCMD</td><td>Enqueue Command Instruction</td><td>Yes</td></tr><tr><td>MOVDIRI</td><td>Move Doubleword as Direct Store</td><td>Yes</td></tr><tr><td>MOVDIR64B</td><td>Move 64 Bytes as Direct Store</td><td>Yes</td></tr><tr><td>PREFETCHIT0/1</td><td>PREFETCHIT0/1 Instruction</td><td>No</td></tr><tr><td>SERIALIZE</td><td>SERIALIZE Instruction</td><td>Yes</td></tr><tr><td>SHA_NI</td><td>SHA1/SHA256 Instruction Extensions</td><td>Yes</td></tr><tr><td>TSXLDTRK</td><td>Transactional Synchronization Extensions</td><td>Yes</td></tr><tr><td>VAES</td><td>Vector AES</td><td>Yes</td></tr><tr><td>WAITPKG</td><td>UMONITOR, UMWAIT, TPAUSE Instructions</td><td>Yes</td></tr></tbody></table>
+                    </section>
+                    
+                    <section>
+                        <h2 id="Accelerator">Accelerator</h2>
+<table class="pure-table pure-table-striped"><thead><tr><th>Name</th><th>Count</th><th>Work Queues</th><th>Full Name</th><th>Description</th></tr></thead><tbody><tr><td>DLB</td><td></td><td>N/A</td><td>Intel Dynamic Load Balancer</td><td>hardware managed system of queues and arbiters connecting producers and consumers</td></tr><tr><td>DSA</td><td></td><td>None</td><td>Intel Data Streaming Accelerator</td><td>a high-performance data copy and transformation accelerator</td></tr><tr><td>IAA</td><td></td><td>None</td><td>Intel Analytics Accelerator</td><td>accelerates compression and decompression for big data applications and in-memory analytic databases</td></tr><tr><td>QAT (on CPU)</td><td></td><td>N/A</td><td>Intel Quick Assist Technology</td><td>accelerates data encryption and compression for applications from networking to enterprise, cloud to storage, and content delivery to database</td></tr><tr><td>QAT (on chipset)</td><td></td><td>N/A</td><td>Intel Quick Assist Technology</td><td>accelerates data encryption and compression for applications from networking to enterprise, cloud to storage, and content delivery to database</td></tr><tr><td>vRAN Boost</td><td></td><td>N/A</td><td>Intel vRAN Boost Accelerator</td><td>accelerates vRAN workloads</td></tr></tbody></table>
+                    </section>
+                    
+                    <section>
+                        <h2 id="Power">Power</h2>
+<table class="pure-table pure-table-striped"><tbody><tr><td style="font-weight:bold">TDP</td><td></td></tr><tr><td style="font-weight:bold">Power &amp; Perf Policy</td><td></td></tr><tr><td style="font-weight:bold">Frequency Governor</td><td>performance</td></tr><tr><td style="font-weight:bold">Frequency Driver</td><td>intel_pstate</td></tr><tr><td style="font-weight:bold">Max C-State</td><td>9</td></tr></tbody></table>
+                    </section>
+                    
+                    <section>
+                        <h2 id="Uncore">Uncore</h2>
+<table class="pure-table pure-table-striped"><tbody><tr><td style="font-weight:bold">CHA Count</td><td></td></tr><tr><td style="font-weight:bold">Minimum Frequency</td><td>0.0GHz</td></tr><tr><td style="font-weight:bold">Maximum Frequency</td><td>0.0GHz</td></tr></tbody></table>
+                    </section>
+                    
+                    <section>
+                        <h2 id="Efficiency Latency Control">Efficiency Latency Control</h2>
+No data found.
+                    </section>
+                    
+                    <section>
+                        <h2 id="Memory">Memory</h2>
+<table class="pure-table pure-table-striped"><tbody><tr><td style="font-weight:bold">Installed Memory</td><td></td></tr><tr><td style="font-weight:bold">MemTotal</td><td>494949448 kB</td></tr><tr><td style="font-weight:bold">MemFree</td><td>429409020 kB</td></tr><tr><td style="font-weight:bold">MemAvailable</td><td>479582852 kB</td></tr><tr><td style="font-weight:bold">Buffers</td><td>855408 kB</td></tr><tr><td style="font-weight:bold">Cached</td><td>33855424 kB</td></tr><tr><td style="font-weight:bold">HugePages_Total</td><td>0</td></tr><tr><td style="font-weight:bold">Hugepagesize</td><td>2048 kB</td></tr><tr><td style="font-weight:bold">Transparent Huge Pages</td><td>madvise</td></tr><tr><td style="font-weight:bold">Automatic NUMA Balancing</td><td>Enabled</td></tr><tr><td style="font-weight:bold">Populated Memory Channels</td><td></td></tr></tbody></table>
+                    </section>
+                    
+                    <section>
+                        <h2 id="DIMM Population">DIMM Population</h2>
+No data found.
+                    </section>
+                    
+                    <section>
+                        <h2 id="DIMM">DIMM</h2>
+No data found.
+                    </section>
+                    
+                    <section>
+                        <h2 id="NIC">NIC</h2>
+No data found.
+                    </section>
+                    
+                    <section>
+                        <h2 id="Network IRQ Mapping">Network IRQ Mapping</h2>
+No data found.
+                    </section>
+                    
+                    <section>
+                        <h2 id="Disk">Disk</h2>
+<table class="pure-table pure-table-striped"><thead><tr><th>Name</th><th>Model</th><th>Size</th><th>Mount Point</th><th>Type</th><th>Request Queue Size</th><th>Minimum I/O Size</th><th>Firmware Version</th><th>PCIe Address</th><th>NUMA Node</th><th>Link Speed</th><th>Link Width</th><th>Max Link Speed</th><th>Max Link Width</th></tr></thead><tbody><tr><td>nvme0n1</td><td>Micron_9400_MTFDKCC7T6TGH</td><td>7T</td><td></td><td></td><td>1023</td><td>512</td><td>F1MU0000</td><td>0000:16:00.0</td><td>0</td><td>16.0 GT/s PCIe</td><td>4</td><td>16.0 GT/s PCIe</td><td>4</td></tr><tr><td>nvme0n1p1</td><td></td><td>538M</td><td>/boot/efi</td><td>vfat</td><td>1023</td><td>512</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>nvme0n1p2</td><td></td><td>7T</td><td>/</td><td>ext4</td><td>1023</td><td>512</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>
+                    </section>
+                    
+                    <section>
+                        <h2 id="Filesystem">Filesystem</h2>
+<table class="pure-table pure-table-striped"><thead><tr><th>Filesystem</th><th>Size</th><th>Used</th><th>Avail</th><th>Use%</th><th>Mounted on</th><th>Mount Options</th></tr></thead><tbody><tr><td>tmpfs</td><td>48G</td><td>116M</td><td>48G</td><td>1%</td><td>/run</td><td></td></tr><tr><td>/dev/nvme0n1p2</td><td>6.9T</td><td>532G</td><td>6.1T</td><td>8%</td><td>/</td><td></td></tr><tr><td>tmpfs</td><td>237G</td><td>364K</td><td>237G</td><td>1%</td><td>/dev/shm</td><td></td></tr><tr><td>tmpfs</td><td>5.0M</td><td>0</td><td>5.0M</td><td>0%</td><td>/run/lock</td><td></td></tr><tr><td>/dev/nvme0n1p1</td><td>537M</td><td>6.1M</td><td>531M</td><td>2%</td><td>/boot/efi</td><td></td></tr><tr><td>10.38.214.14:/ssg_lab_home_directory</td><td>151G</td><td>97G</td><td>54G</td><td>65%</td><td>/nfs/site/home</td><td></td></tr><tr><td>tmpfs</td><td>48G</td><td>28K</td><td>48G</td><td>1%</td><td>/run/user/12104283</td><td></td></tr><tr><td>tmpfs</td><td>48G</td><td>24K</td><td>48G</td><td>1%</td><td>/run/user/12147889</td><td></td></tr><tr><td>tmpfs</td><td>48G</td><td>28K</td><td>48G</td><td>1%</td><td>/run/user/12186611</td><td></td></tr></tbody></table>
+                    </section>
+                    
+                    <section>
+                        <h2 id="GPU">GPU</h2>
+No data found.
+                    </section>
+                    
+                    <section>
+                        <h2 id="Gaudi">Gaudi</h2>
+No data found.
+                    </section>
+                    
+                    <section>
+                        <h2 id="CXL Device">CXL Device</h2>
+No data found.
+                    </section>
+                    
+                    <section>
+                        <h2 id="Vulnerability">Vulnerability</h2>
+No data found.
+                    </section>
+                    
+                    <section>
+                        <h2 id="Process">Process</h2>
+<table class="pure-table pure-table-striped"><thead><tr><th>PID</th><th>PPID</th><th>%CPU</th><th>%MEM</th><th>RSS</th><th>COMMAND</th></tr></thead><tbody><tr><td>692153</td><td>678975</td><td>129</td><td>0.5</td><td>2637560</td><td>python run_framework.py -f dpnp_gpu -p L</td></tr><tr><td>642778</td><td>642756</td><td>3.8</td><td>0.1</td><td>972340</td><td>/localdisk/work/vtavana/vscode/.vscode-server/cli/servers/Stable-c306e94f98122556ca081f527b466015e1bc37b0/server/node --dns-result-order=ipv4first /localdisk/work/vtavana/vscode/.vscode-server/cli/servers/Stable-c306e94f98122556ca081f527b466015e1bc37b0/server/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false</td></tr><tr><td>694261</td><td>692602</td><td>2.2</td><td>0.0</td><td>72508</td><td>./svr-info</td></tr><tr><td>643134</td><td>642778</td><td>1.7</td><td>0.2</td><td>1062024</td><td>/localdisk/work/vtavana/vscode/.vscode-server/cli/servers/Stable-c306e94f98122556ca081f527b466015e1bc37b0/server/node /nfs/site/home/vtavanas/.vscode-server/extensions/ms-python.vscode-pylance-2025.7.1/dist/server.bundle.js --cancellationReceive=file:7bbea1cdc820935d59481ecb7ba8f58394048450db --node-ipc --clientProcessId=642778</td></tr><tr><td>691874</td><td>643110</td><td>0.5</td><td>0.1</td><td>719788</td><td>/localdisk/work/vtavana/miniforge/envs/dpnp_dev/bin/python3.13 /localdisk/work/vtavana/miniforge/envs/dpnp_dev/bin/ipython</td></tr><tr><td>693768</td><td>693750</td><td>0.2</td><td>0.0</td><td>21112</td><td>/nfs/site/home/vtavanas/.vscode-server/code-c306e94f98122556ca081f527b466015e1bc37b0 command-shell --cli-data-dir /nfs/site/home/vtavanas/.vscode-server/cli --parent-process-id 693750 --on-host=127.0.0.1 --on-port</td></tr><tr><td>694307</td><td>694304</td><td>0.0</td><td>0.0</td><td>1060</td><td>head -n 20</td></tr><tr><td>694305</td><td>694304</td><td>0.0</td><td>0.0</td><td>4864</td><td>ps -eo pid,ppid,%cpu,%mem,rss,command --sort=-%cpu,-pid</td></tr><tr><td>694293</td><td>694292</td><td>0.0</td><td>0.0</td><td>4568</td><td>/tmp/svr-info.tmp.667627951/collector /tmp/svr-info.tmp.667627951/sprpvcbenchlin01_reports_collector.yaml</td></tr><tr><td>694292</td><td>694261</td><td>0.0</td><td>0.0</td><td>3580</td><td>bash -c /tmp/svr-info.tmp.667627951/collector /tmp/svr-info.tmp.667627951/sprpvcbenchlin01_reports_collector.yaml &gt; collector.stdout</td></tr><tr><td>694026</td><td>693992</td><td>0.0</td><td>0.0</td><td>4504</td><td>bash</td></tr><tr><td>693992</td><td>642811</td><td>0.0</td><td>0.0</td><td>3464</td><td>-usr/intel/bin/tcsh</td></tr><tr><td>693900</td><td>693750</td><td>0.0</td><td>0.0</td><td>1092</td><td>sleep 180</td></tr><tr><td>693750</td><td>693747</td><td>0.0</td><td>0.0</td><td>1788</td><td>sh</td></tr><tr><td>693747</td><td>693732</td><td>0.0</td><td>0.0</td><td>2948</td><td>tcsh -c sh</td></tr><tr><td>693732</td><td>693453</td><td>0.0</td><td>0.0</td><td>8764</td><td>sshd: vtavanas@notty</td></tr><tr><td>693504</td><td>632975</td><td>0.0</td><td>0.0</td><td>1016</td><td>sleep 180</td></tr><tr><td>693485</td><td>632870</td><td>0.0</td><td>0.0</td><td>1060</td><td>sleep 180</td></tr><tr><td>692659</td><td>692652</td><td>0.0</td><td>0.0</td><td>5468</td><td>/usr/lib/openssh/sftp-server</td></tr></tbody></table>
+                    </section>
+                    
+                    <section>
+                        <h2 id="Sensor">Sensor</h2>
+No data found.
+                    </section>
+                    
+                    <section>
+                        <h2 id="Chassis Status">Chassis Status</h2>
+No data found.
+                    </section>
+                    
+                    <section>
+                        <h2 id="System Event Log">System Event Log</h2>
+No data found.
+                    </section>
+                    
+                    <section>
+                        <h2 id="Kernel Log">Kernel Log</h2>
+No data found.
+                    </section>
+                    
+                    <section>
+                        <h2 id="PMU">PMU</h2>
+No data found.
+                    </section>
+                    
+                    <section>
+                        <h2 id="svr-info">svr-info</h2>
+<table class="pure-table pure-table-striped"><tbody><tr><td style="font-weight:bold">version</td><td>2.12.0_2024-10-09_c72090a7</td></tr></tbody></table>
+                    </section>
+                    
+                </div>
+            </main>
+        </div>
+        
+    
+        
+        <div id="BenchmarkContent" class="tabcontent tabnotdefault">
+            <main class="content">
+                
+                <h3>Use the &#34;-benchmark all&#34; option to collect all micro-benchmarking data. See &#34;-help&#34; for finer control.</h3>
+                
+                
+                <section>
+                    <h2 id="Summary">Summary</h2>
+No data found.
+                </section>
+                
+                <section>
+                    <h2 id="Core Frequency">Core Frequency</h2>
+No data found.
+                </section>
+                
+                <section>
+                    <h2 id="Memory Bandwidth and Latency">Memory Bandwidth and Latency</h2>
+No data found.<br>Using the OSS release of svr-info? Memory benchmarks require Intel Memory Latency Checker (MLC) be downloaded, extracted, and the Linux binary placed in the svr-info/extras directory. See the repo README for additional information.
+                </section>
+                
+                <section>
+                    <h2 id="Memory NUMA Bandwidth">Memory NUMA Bandwidth</h2>
+No data found.
+                </section>
+                
+                <h3>&nbsp;</h3>
+            </main>
+        </div>
+        
+    
+        
+        <div id="ProfileContent" class="tabcontent tabnotdefault">
+            <main class="content">
+                
+                <h3>Use the &#34;-profile all&#34; option to collect all system profiling data. See &#34;-help&#34; for finer control.</h3>
+                
+                
+                <section>
+                    <h2 id="Summary">Summary</h2>
+No data found.
+                </section>
+                
+                <section>
+                    <h2 id="Average CPU Utilization">Average CPU Utilization</h2>
+No data found.
+                </section>
+                
+                <section>
+                    <h2 id="CPU Utilization">CPU Utilization</h2>
+No data found.
+                </section>
+                
+                <section>
+                    <h2 id="Power Stats">Power Stats</h2>
+No data found.
+                </section>
+                
+                <section>
+                    <h2 id="IRQ Rate">IRQ Rate</h2>
+No data found.
+                </section>
+                
+                <section>
+                    <h2 id="Drive Stats">Drive Stats</h2>
+No data found.
+                </section>
+                
+                <section>
+                    <h2 id="Network Stats">Network Stats</h2>
+No data found.
+                </section>
+                
+                <section>
+                    <h2 id="Memory Stats">Memory Stats</h2>
+No data found.
+                </section>
+                
+                <section>
+                    <h2 id="PMU Metrics">PMU Metrics</h2>
+No data found.
+                </section>
+                
+                <h3>&nbsp;</h3>
+            </main>
+        </div>
+        
+    
+        
+        <div id="AnalyzeContent" class="tabcontent tabnotdefault">
+            <main class="content">
+                
+                <h3>Use the &#34;-analyze all&#34; option to collect all analysis data. See &#34;-help&#34; for finer control.</h3>
+                
+                <h3>Note: Perl is required on the target machine to collapse the call stacks used to produce System Flame Graphs.</h3>
+                
+                
+                <section>
+                    <h2 id="Code Path Frequency">Code Path Frequency</h2>
+<h2>System</h2>
+No data found.<h2>Java</h2>
+No data found.
+                </section>
+                
+                <h3>&nbsp;</h3>
+            </main>
+        </div>
+        
+    
+        
+        <div id="InsightsContent" class="tabcontent tabnotdefault">
+            <main class="content">
+                
+                <h3>Insights are derived from data collected by Intel® System Health Inspector. They are provided for consideration but may not always be relevant.</h3>
+                
+                
+                <section>
+                    <h2 id="Insight">Insight</h2>
+<table class="pure-table pure-table-striped"><thead><tr><th>Recommendation</th><th>Justification</th></tr></thead><tbody><tr><td>Consider enabling hyper-threading.</td><td>Hyper-threading is not enabled.</td></tr><tr><td>Consider upgrading Java to extract the best performance from Xeon CPUs.</td><td>Detected Java JDK &#39;openjdk version &#34;1.8.0_422&#34;&#39; and Xeon &#39;SPR&#39; CPU.</td></tr></tbody></table>
+                </section>
+                
+                <h3>&nbsp;</h3>
+            </main>
+        </div>
+        
+    
+    <script>
+        const widthOpen="150px"
+        const widthClosed="30px"
+        function openNav() {
+            document.getElementById("mySidebar").style.width = widthOpen;
+            document.getElementById("myConfigurationContent").style.marginLeft = widthOpen;
+            document.querySelector(".togglebtn").innerHTML="<"
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = widthClosed;
+            document.getElementById("myConfigurationContent").style.marginLeft= widthClosed;
+            document.querySelector(".togglebtn").innerHTML=">"
+        }
+
+        function toggleNav() {
+            if (document.getElementById("mySidebar").style.width !== widthOpen) {
+                openNav()
+            } else {
+                closeNav()
+            }
+        }
+        
+        openNav()
+    </script>
+    <script>
+        function openTab(evt, tabName) {
+            
+            var i, tabcontent, tablinks;
+
+            
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        
+        document.getElementById("defaultOpen").click();
+    </script>
+</body>
+
+</html>
