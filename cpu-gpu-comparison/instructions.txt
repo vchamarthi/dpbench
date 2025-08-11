@@ -1,0 +1,11 @@
+Login to sprpvcbenchlin01
+
+Clone https://github.com/antonwolfy/dpbench.git
+
+cd dpbench 
+
+conda env create -f environments/conda.yml
+
+conda activate dpbench-new
+
+pip install .

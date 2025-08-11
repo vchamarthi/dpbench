@@ -1,0 +1,597 @@
+numpy
+dpbench -b black_scholes,pairwise_distance,l2_norm,rambo,gpairs -i numpy run --sycl-device=opencl:cpu --precision=double --preset S
+
+Result
+======
+  postfix description                           device
+0   numpy       NumPy  Intel(R) Xeon(R) Platinum 8480+
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,numpy
+20MB,black_scholes,S,Success
+8KB,gpairs,S,Success
+1MB,l2_norm,S,Success
+8MB,pairwise_distance,S,Success
+7MB,rambo,S,Success
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,numpy
+20MB,black_scholes,S,29.76ms
+8KB,gpairs,S,0.85ms
+1MB,l2_norm,S,0.37ms
+8MB,pairwise_distance,S,3.25ms
+7MB,rambo,S,2.11ms
+
+
+dpbench -b black_scholes,pairwise_distance,l2_norm,rambo,gpairs -i numpy run --sycl-device=opencl:cpu --precision=double --preset M
+Result
+======
+  postfix description                           device
+0   numpy       NumPy  Intel(R) Xeon(R) Platinum 8480+
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,numpy
+5GB,black_scholes,M,Success
+512KB,gpairs,M,Success
+8GB,l2_norm,M,Success
+8GB,pairwise_distance,M,Success
+1GB,rambo,M,Success
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,numpy
+5GB,black_scholes,M,6173.23ms
+512KB,gpairs,M,8268.81ms
+8GB,l2_norm,M,2982.63ms
+8GB,pairwise_distance,M,3060.81ms
+1GB,rambo,M,637.78ms
+
+dpbench -b black_scholes,pairwise_distance,l2_norm,rambo,gpairs -i numpy run --sycl-device=opencl:cpu --precision=double --preset L
+Result
+======
+  postfix description                           device
+0   numpy       NumPy  Intel(R) Xeon(R) Platinum 8480+
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,numpy
+0B,black_scholes,L,Execution Timeout
+32MB,gpairs,L,Failed Execution
+16GB,l2_norm,L,Success
+14GB,pairwise_distance,L,Success
+0B,rambo,L,Execution Timeout
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,numpy
+0B,black_scholes,L,n/a
+32MB,gpairs,L,n/a
+16GB,l2_norm,L,5835.0ms
+14GB,pairwise_distance,L,5937.87ms
+0B,rambo,L,n/a
+
+dpbench -b black_scholes,pairwise_distance,l2_norm,rambo,gpairs -i numpy run --sycl-device=opencl:cpu --precision=single --preset S
+Result
+======
+  postfix description                           device
+0   numpy       NumPy  Intel(R) Xeon(R) Platinum 8480+
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,numpy
+10MB,black_scholes,S,Success
+4KB,gpairs,S,Success
+512KB,l2_norm,S,Success
+4MB,pairwise_distance,S,Success
+3MB,rambo,S,Success
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,numpy
+10MB,black_scholes,S,22.96ms
+4KB,gpairs,S,0.73ms
+512KB,l2_norm,S,0.34ms
+4MB,pairwise_distance,S,2.71ms
+3MB,rambo,S,1.59ms
+
+
+dpbench -b black_scholes,pairwise_distance,l2_norm,rambo,gpairs -i numpy run --sycl-device=opencl:cpu --precision=single --preset M
+
+Legend
+======
+  postfix description                           device
+0   numpy       NumPy  Intel(R) Xeon(R) Platinum 8480+
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,numpy
+2GB,black_scholes,M,Success
+256KB,gpairs,M,Success
+4GB,l2_norm,M,Success
+4GB,pairwise_distance,M,Success
+896MB,rambo,M,Success
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,numpy
+2GB,black_scholes,M,5617.35ms
+256KB,gpairs,M,5028.85ms
+4GB,l2_norm,M,2512.69ms
+4GB,pairwise_distance,M,1460.24ms
+896MB,rambo,M,321.66ms
+
+
+dpbench -b black_scholes,pairwise_distance,l2_norm,rambo,gpairs -i numpy run --sycl-device=opencl:cpu --precision=single --preset L
+Result
+======
+  postfix description                           device
+0   numpy       NumPy  Intel(R) Xeon(R) Platinum 8480+
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,numpy
+5GB,black_scholes,L,Success
+16MB,gpairs,L,Failed Execution
+8GB,l2_norm,L,Success
+7GB,pairwise_distance,L,Success
+1GB,rambo,L,Success
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,numpy
+5GB,black_scholes,L,11213.47ms
+16MB,gpairs,L,n/a
+8GB,l2_norm,L,4990.62ms
+7GB,pairwise_distance,L,2893.07ms
+1GB,rambo,L,645.15ms
+
+
+dpbench -b black_scholes,pairwise_distance,l2_norm,rambo,gpairs -i dpnp run --sycl-device=opencl:cpu --precision=single --preset S
+Legend
+======
+  postfix description                           device
+0    dpnp        dpnp  Intel(R) Xeon(R) Platinum 8480+
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+10MB,black_scholes,S,Success
+4KB,gpairs,S,Success
+512KB,l2_norm,S,Success
+4MB,pairwise_distance,S,Success
+3MB,rambo,S,Success
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+10MB,black_scholes,S,26.64ms
+4KB,gpairs,S,28.53ms
+512KB,l2_norm,S,1.0ms
+4MB,pairwise_distance,S,12.95ms
+3MB,rambo,S,8.73ms
+
+
+
+dpbench -b black_scholes,pairwise_distance,l2_norm,rambo,gpairs -i dpnp run --sycl-device=opencl:cpu --precision=single --preset M
+Result
+======
+  postfix description                           device
+0    dpnp        dpnp  Intel(R) Xeon(R) Platinum 8480+
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+2GB,black_scholes,M,Success
+256KB,gpairs,M,Success
+4GB,l2_norm,M,Success
+4GB,pairwise_distance,M,Success
+896MB,rambo,M,Success
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+2GB,black_scholes,M,1373.7ms
+256KB,gpairs,M,1964.37ms
+4GB,l2_norm,M,530.0ms
+4GB,pairwise_distance,M,325.52ms
+896MB,rambo,M,252.81ms
+
+
+
+dpbench -b black_scholes,pairwise_distance,l2_norm,rambo,gpairs -i dpnp run --sycl-device=opencl:cpu --precision=single --preset L
+Result
+======
+  postfix description                           device
+0    dpnp        dpnp  Intel(R) Xeon(R) Platinum 8480+
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+0B,black_scholes,L,Execution Timeout
+16MB,gpairs,L,Failed Execution
+8GB,l2_norm,L,Success
+7GB,pairwise_distance,L,Success
+0B,rambo,L,Execution Timeout
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+0B,black_scholes,L,n/a
+16MB,gpairs,L,n/a
+8GB,l2_norm,L,978.3ms
+7GB,pairwise_distance,L,530.03ms
+0B,rambo,L,n/a
+
+
+dpbench -b black_scholes,pairwise_distance,l2_norm,rambo,gpairs -i dpnp run --sycl-device=opencl:cpu --precision=double --preset S
+Legend
+======
+  postfix description                           device
+0    dpnp        dpnp  Intel(R) Xeon(R) Platinum 8480+
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+20MB,black_scholes,S,Success
+8KB,gpairs,S,Success
+1MB,l2_norm,S,Success
+8MB,pairwise_distance,S,Success
+7MB,rambo,S,Success
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+20MB,black_scholes,S,23.77ms
+8KB,gpairs,S,35.38ms
+1MB,l2_norm,S,1.81ms
+8MB,pairwise_distance,S,19.19ms
+7MB,rambo,S,13.68ms
+
+
+dpbench -b black_scholes,pairwise_distance,l2_norm,rambo,gpairs -i dpnp run --sycl-device=opencl:cpu --precision=double --preset M
+Legend
+======
+  postfix description                           device
+0    dpnp        dpnp  Intel(R) Xeon(R) Platinum 8480+
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+5GB,black_scholes,M,Success
+512KB,gpairs,M,Success
+8GB,l2_norm,M,Success
+8GB,pairwise_distance,M,Success
+1GB,rambo,M,Success
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+5GB,black_scholes,M,2682.99ms
+512KB,gpairs,M,3162.72ms
+8GB,l2_norm,M,1011.53ms
+8GB,pairwise_distance,M,518.09ms
+1GB,rambo,M,468.74ms
+
+
+dpbench -b black_scholes,pairwise_distance,l2_norm,rambo,gpairs -i dpnp run --sycl-device=opencl:cpu --precision=double --preset L
+Legend
+======
+  postfix description                           device
+0    dpnp        dpnp  Intel(R) Xeon(R) Platinum 8480+
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+0B,black_scholes,L,Execution Timeout
+32MB,gpairs,L,Failed Execution
+16GB,l2_norm,L,Success
+14GB,pairwise_distance,L,Success
+0B,rambo,L,Execution Timeout
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+0B,black_scholes,L,n/a
+32MB,gpairs,L,n/a
+16GB,l2_norm,L,1841.32ms
+14GB,pairwise_distance,L,1008.81ms
+0B,rambo,L,n/a
+
+dpbench -b black_scholes,pairwise_distance,l2_norm,rambo,gpairs -i dpnp run --sycl-device=opencl:gpu --precision=single --preset S
+Legend
+======
+  postfix description                             device
+0    dpnp        dpnp  Intel(R) Data Center GPU Max 1100
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+10MB,black_scholes,S,Success
+4KB,gpairs,S,Success
+512KB,l2_norm,S,Success
+4MB,pairwise_distance,S,Success
+3MB,rambo,S,Success
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+10MB,black_scholes,S,4.83ms
+4KB,gpairs,S,23.69ms
+512KB,l2_norm,S,0.29ms
+4MB,pairwise_distance,S,1.64ms
+3MB,rambo,S,3.08ms
+
+
+dpbench -b black_scholes,pairwise_distance,l2_norm,rambo,gpairs -i dpnp run --sycl-device=opencl:gpu --precision=single --preset M
+Legend
+======
+  postfix description                             device
+0    dpnp        dpnp  Intel(R) Data Center GPU Max 1100
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+2GB,black_scholes,M,Success
+256KB,gpairs,M,Success
+4GB,l2_norm,M,Success
+4GB,pairwise_distance,M,Success
+896MB,rambo,M,Success
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+2GB,black_scholes,M,132.91ms
+256KB,gpairs,M,191.26ms
+4GB,l2_norm,M,19.6ms
+4GB,pairwise_distance,M,78.04ms
+896MB,rambo,M,15.26ms
+
+dpbench -b black_scholes,pairwise_distance,l2_norm,rambo,gpairs -i dpnp run --sycl-device=opencl:gpu --precision=single --preset L
+
+Legend
+======
+  postfix description                             device
+0    dpnp        dpnp  Intel(R) Data Center GPU Max 1100
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+0B,black_scholes,L,Execution Timeout
+16MB,gpairs,L,Failed Execution
+8GB,l2_norm,L,Success
+7GB,pairwise_distance,L,Success
+0B,rambo,L,Execution Timeout
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+0B,black_scholes,L,n/a
+16MB,gpairs,L,n/a
+8GB,l2_norm,L,40.19ms
+7GB,pairwise_distance,L,140.22ms
+0B,rambo,L,n/a
+
+
+dpbench -b black_scholes,pairwise_distance,l2_norm,rambo,gpairs -i dpnp run --sycl-device=opencl:gpu --precision=double --preset S
+Legend
+======
+  postfix description                             device
+0    dpnp        dpnp  Intel(R) Data Center GPU Max 1100
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+20MB,black_scholes,S,Success
+8KB,gpairs,S,Success
+1MB,l2_norm,S,Success
+8MB,pairwise_distance,S,Success
+7MB,rambo,S,Success
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+20MB,black_scholes,S,5.24ms
+8KB,gpairs,S,24.23ms
+1MB,l2_norm,S,0.3ms
+8MB,pairwise_distance,S,1.66ms
+7MB,rambo,S,3.31ms
+
+dpbench -b black_scholes,pairwise_distance,l2_norm,rambo,gpairs -i dpnp run --sycl-device=opencl:gpu --precision=double --preset M
+Legend
+======
+  postfix description                             device
+0    dpnp        dpnp  Intel(R) Data Center GPU Max 1100
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+5GB,black_scholes,M,Success
+512KB,gpairs,M,Success
+8GB,l2_norm,M,Success
+8GB,pairwise_distance,M,Success
+1GB,rambo,M,Success
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+5GB,black_scholes,M,270.15ms
+512KB,gpairs,M,312.35ms
+8GB,l2_norm,M,40.53ms
+8GB,pairwise_distance,M,111.72ms
+1GB,rambo,M,28.19ms
+
+
+dpbench -b black_scholes,pairwise_distance,l2_norm,rambo,gpairs -i dpnp run --sycl-device=opencl:gpu --precision=double --preset L
+Legend
+======
+  postfix description                             device
+0    dpnp        dpnp  Intel(R) Data Center GPU Max 1100
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+0B,black_scholes,L,Execution Timeout
+32MB,gpairs,L,Failed Execution
+16GB,l2_norm,L,Success
+14GB,pairwise_distance,L,Success
+0B,rambo,L,Execution Timeout
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+0B,black_scholes,L,n/a
+32MB,gpairs,L,n/a
+16GB,l2_norm,L,80.89ms
+14GB,pairwise_distance,L,199.85ms
+0B,rambo,L,n/a
+
+dpbench -b black_scholes,pairwise_distance,l2_norm,rambo,gpairs -i dpnp run --sycl-device=level_zero:gpu --precision=single --preset S
+Legend
+======
+  postfix description                             device
+0    dpnp        dpnp  Intel(R) Data Center GPU Max 1100
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+10MB,black_scholes,S,Success
+4KB,gpairs,S,Success
+512KB,l2_norm,S,Success
+4MB,pairwise_distance,S,Success
+3MB,rambo,S,Success
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+10MB,black_scholes,S,2.58ms
+4KB,gpairs,S,11.87ms
+512KB,l2_norm,S,0.16ms
+4MB,pairwise_distance,S,0.92ms
+3MB,rambo,S,1.46ms
+
+dpbench -b black_scholes,pairwise_distance,l2_norm,rambo,gpairs -i dpnp run --sycl-device=level_zero:gpu --precision=single --preset M
+Legend
+======
+  postfix description                             device
+0    dpnp        dpnp  Intel(R) Data Center GPU Max 1100
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+2GB,black_scholes,M,Success
+256KB,gpairs,M,Success
+4GB,l2_norm,M,Success
+4GB,pairwise_distance,M,Success
+896MB,rambo,M,Success
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+2GB,black_scholes,M,125.25ms
+256KB,gpairs,M,191.35ms
+4GB,l2_norm,M,21.22ms
+4GB,pairwise_distance,M,78.22ms
+896MB,rambo,M,14.78ms
+
+dpbench -b black_scholes,pairwise_distance,l2_norm,rambo,gpairs -i dpnp run --sycl-device=level_zero:gpu --precision=single --preset L
+Legend
+======
+  postfix description                             device
+0    dpnp        dpnp  Intel(R) Data Center GPU Max 1100
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+0B,black_scholes,L,Execution Timeout
+16MB,gpairs,L,Failed Execution
+8GB,l2_norm,L,Success
+7GB,pairwise_distance,L,Success
+0B,rambo,L,Execution Timeout
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+0B,black_scholes,L,n/a
+16MB,gpairs,L,n/a
+8GB,l2_norm,L,43.87ms
+7GB,pairwise_distance,L,139.73ms
+0B,rambo,L,n/a
+
+
+dpbench -b black_scholes,pairwise_distance,l2_norm,rambo,gpairs -i dpnp run --sycl-device=level_zero:gpu --precision=double --preset S
+Legend
+======
+  postfix description                             device
+0    dpnp        dpnp  Intel(R) Data Center GPU Max 1100
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+20MB,black_scholes,S,Success
+8KB,gpairs,S,Success
+1MB,l2_norm,S,Success
+8MB,pairwise_distance,S,Success
+7MB,rambo,S,Success
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+20MB,black_scholes,S,2.6ms
+8KB,gpairs,S,12.02ms
+1MB,l2_norm,S,0.17ms
+8MB,pairwise_distance,S,0.9ms
+7MB,rambo,S,1.53ms
+
+dpbench -b black_scholes,pairwise_distance,l2_norm,rambo,gpairs -i dpnp run --sycl-device=level_zero:gpu --precision=double --preset M
+Legend
+======
+  postfix description                             device
+0    dpnp        dpnp  Intel(R) Data Center GPU Max 1100
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+5GB,black_scholes,M,Success
+512KB,gpairs,M,Success
+8GB,l2_norm,M,Success
+8GB,pairwise_distance,M,Success
+1GB,rambo,M,Success
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+5GB,black_scholes,M,247.2ms
+512KB,gpairs,M,312.09ms
+8GB,l2_norm,M,45.35ms
+8GB,pairwise_distance,M,111.6ms
+1GB,rambo,M,27.19ms
+
+dpbench -b black_scholes,pairwise_distance,l2_norm,rambo,gpairs -i dpnp run --sycl-device=level_zero:gpu --precision=double --preset L
+Legend
+======
+  postfix description                             device
+0    dpnp        dpnp  Intel(R) Data Center GPU Max 1100
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+0B,black_scholes,L,Execution Timeout
+32MB,gpairs,L,Failed Execution
+16GB,l2_norm,L,Success
+14GB,pairwise_distance,L,Success
+0B,rambo,L,Execution Timeout
+
+Summary of current implementation
+=================================
+input_size,benchmark,problem_preset,dpnp
+0B,black_scholes,L,n/a
+32MB,gpairs,L,n/a
+16GB,l2_norm,L,90.63ms
+14GB,pairwise_distance,L,199.25ms
+0B,rambo,L,n/a
+
+
+
