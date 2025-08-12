@@ -1,0 +1,1216 @@
+command - python run_framework.py -f numpy -p S
+
+***** Testing NumPy with adi on the S dataset *****
+NumPy - default - first/validation: 8ms
+NumPy - default - median: 8ms
+***** Testing NumPy with arc_distance on the S dataset *****
+NumPy - default - first/validation: 306ms
+NumPy - default - median: 1ms
+***** Testing NumPy with atax on the S dataset *****
+NumPy - default - first/validation: 5ms
+NumPy - default - median: 4ms
+***** Testing NumPy with azimint_hist on the S dataset *****
+NumPy - default - first/validation: 10ms
+NumPy - default - median: 8ms
+***** Testing NumPy with azimint_naive on the S dataset *****
+NumPy - default - first/validation: 523ms
+NumPy - default - median: 522ms
+***** Testing NumPy with bicg on the S dataset *****
+NumPy - default - first/validation: 6ms
+NumPy - default - median: 4ms
+***** Testing NumPy with cavity_flow on the S dataset *****
+NumPy - default - first/validation: 7ms
+NumPy - default - median: 7ms
+***** Testing NumPy with channel_flow on the S dataset *****
+NumPy - default - first/validation: 405ms
+NumPy - default - median: 402ms
+***** Testing NumPy with cholesky on the S dataset *****
+NumPy - default - first/validation: 7ms
+NumPy - default - median: 7ms
+***** Testing NumPy with cholesky2 on the S dataset *****
+NumPy - default - first/validation: 18ms
+NumPy - default - median: 12ms
+***** Testing NumPy with compute on the S dataset *****
+NumPy - default - first/validation: 25ms
+NumPy - default - median: 16ms
+***** Testing NumPy with contour_integral on the S dataset *****
+NumPy - default - first/validation: 324ms
+NumPy - default - median: 10ms
+***** Testing NumPy with conv2d_bias on the S dataset *****
+NumPy - default - first/validation: 291ms
+NumPy - default - median: 6ms
+***** Testing NumPy with correlation on the S dataset *****
+NumPy - default - first/validation: 16ms
+NumPy - default - median: 7ms
+***** Testing NumPy with covariance on the S dataset *****
+NumPy - default - first/validation: 16ms
+NumPy - default - median: 6ms
+***** Testing NumPy with covariance2 on the S dataset *****
+NumPy - default - first/validation: 13ms
+NumPy - default - median: 2ms
+***** Testing NumPy with crc16 on the S dataset *****
+NumPy - default - first/validation: 2ms
+NumPy - default - median: 2ms
+***** Testing NumPy with deriche on the S dataset *****
+NumPy - default - first/validation: 6ms
+NumPy - default - median: 6ms
+***** Testing NumPy with doitgen on the S dataset *****
+NumPy - default - first/validation: 8ms
+NumPy - default - median: 7ms
+***** Testing NumPy with durbin on the S dataset *****
+NumPy - default - first/validation: 4ms
+NumPy - default - median: 4ms
+***** Testing NumPy with fdtd_2d on the S dataset *****
+NumPy - default - first/validation: 6ms
+NumPy - default - median: 5ms
+***** Testing NumPy with floyd_warshall on the S dataset *****
+NumPy - default - first/validation: 5ms
+NumPy - default - median: 4ms
+***** Testing NumPy with gemm on the S dataset *****
+NumPy - default - first/validation: 5ms
+NumPy - default - median: 3ms
+***** Testing NumPy with gemver on the S dataset *****
+NumPy - default - first/validation: 21ms
+NumPy - default - median: 13ms
+***** Testing NumPy with gesummv on the S dataset *****
+NumPy - default - first/validation: 13ms
+NumPy - default - median: 2ms
+***** Testing NumPy with go_fast on the S dataset *****
+NumPy - default - first/validation: 300ms
+NumPy - default - median: 2ms
+***** Testing NumPy with gramschmidt on the S dataset *****
+NumPy - default - first/validation: 4ms
+NumPy - default - median: 4ms
+***** Testing NumPy with hdiff on the S dataset *****
+NumPy - default - first/validation: 296ms
+NumPy - default - median: 8ms
+***** Testing NumPy with heat_3d on the S dataset *****
+NumPy - default - first/validation: 5ms
+NumPy - default - median: 5ms
+***** Testing NumPy with jacobi_1d on the S dataset *****
+NumPy - default - first/validation: 6ms
+NumPy - default - median: 7ms
+***** Testing NumPy with jacobi_2d on the S dataset *****
+NumPy - default - first/validation: 5ms
+NumPy - default - median: 5ms
+***** Testing NumPy with k2mm on the S dataset *****
+NumPy - default - first/validation: 12ms
+NumPy - default - median: 2ms
+***** Testing NumPy with k3mm on the S dataset *****
+NumPy - default - first/validation: 8ms
+NumPy - default - median: 2ms
+***** Testing NumPy with lenet on the S dataset *****
+NumPy - default - first/validation: 277ms
+NumPy - default - median: 5ms
+***** Testing NumPy with lu on the S dataset *****
+NumPy - default - first/validation: 5ms
+NumPy - default - median: 5ms
+***** Testing NumPy with ludcmp on the S dataset *****
+NumPy - default - first/validation: 6ms
+NumPy - default - median: 5ms
+***** Testing NumPy with mandelbrot1 on the S dataset *****
+NumPy - default - first/validation: 10ms
+NumPy - default - median: 9ms
+***** Testing NumPy with mandelbrot2 on the S dataset *****
+NumPy - default - first/validation: 9ms
+NumPy - default - median: 8ms
+***** Testing NumPy with mlp on the S dataset *****
+NumPy - default - first/validation: 325ms
+NumPy - default - median: 8ms
+***** Testing NumPy with mvt on the S dataset *****
+NumPy - default - first/validation: 7ms
+NumPy - default - median: 6ms
+***** Testing NumPy with nbody on the S dataset *****
+NumPy - default - first/validation: 3ms
+NumPy - default - median: 2ms
+***** Testing NumPy with nussinov on the S dataset *****
+NumPy - default - first/validation: 4ms
+NumPy - default - median: 4ms
+***** Testing NumPy with resnet on the S dataset *****
+NumPy - default - first/validation: 318ms
+NumPy - default - median: 7ms
+***** Testing NumPy with scattering_self_energies on the S dataset *****
+NumPy - default - first/validation: 289ms
+NumPy - default - median: 5ms
+***** Testing NumPy with seidel_2d on the S dataset *****
+NumPy - default - first/validation: 7ms
+NumPy - default - median: 7ms
+***** Testing NumPy with softmax on the S dataset *****
+NumPy - default - first/validation: 310ms
+NumPy - default - median: 19ms
+***** Testing NumPy with spmv on the S dataset *****
+NumPy - default - first/validation: 8ms
+NumPy - default - median: 8ms
+***** Testing NumPy with stockham_fft on the S dataset *****
+NumPy - default - first/validation: 293ms
+NumPy - default - median: 5ms
+***** Testing NumPy with symm on the S dataset *****
+NumPy - default - first/validation: 5ms
+NumPy - default - median: 5ms
+***** Testing NumPy with syr2k on the S dataset *****
+NumPy - default - first/validation: 6ms
+NumPy - default - median: 6ms
+***** Testing NumPy with syrk on the S dataset *****
+NumPy - default - first/validation: 5ms
+NumPy - default - median: 5ms
+***** Testing NumPy with trisolv on the S dataset *****
+NumPy - default - first/validation: 4ms
+NumPy - default - median: 4ms
+***** Testing NumPy with trmm on the S dataset *****
+NumPy - default - first/validation: 5ms
+NumPy - default - median: 5ms
+***** Testing NumPy with vadv on the S dataset *****
+NumPy - default - first/validation: 7ms
+NumPy - default - median: 7ms
+
+Command - python run_framework.py -f numpy -p M
+
+***** Testing NumPy with adi on the M dataset *****
+NumPy - default - first/validation: 79ms
+NumPy - default - median: 79ms
+***** Testing NumPy with arc_distance on the M dataset *****
+NumPy - default - first/validation: 329ms
+NumPy - default - median: 10ms
+***** Testing NumPy with atax on the M dataset *****
+NumPy - default - first/validation: 23ms
+NumPy - default - median: 22ms
+***** Testing NumPy with azimint_hist on the M dataset *****
+NumPy - default - first/validation: 76ms
+NumPy - default - median: 74ms
+***** Testing NumPy with azimint_naive on the M dataset *****
+NumPy - default - first/validation: 5175ms
+NumPy - default - median: 5172ms
+***** Testing NumPy with bicg on the M dataset *****
+NumPy - default - first/validation: 24ms
+NumPy - default - median: 22ms
+***** Testing NumPy with cavity_flow on the M dataset *****
+NumPy - default - first/validation: 360ms
+NumPy - default - median: 52ms
+***** Testing NumPy with channel_flow on the M dataset *****
+NumPy - default - first/validation: 1521ms
+NumPy - default - median: 1224ms
+***** Testing NumPy with cholesky on the M dataset *****
+NumPy - default - first/validation: 66ms
+NumPy - default - median: 50ms
+***** Testing NumPy with cholesky2 on the M dataset *****
+NumPy - default - first/validation: 76ms
+NumPy - default - median: 62ms
+***** Testing NumPy with compute on the M dataset *****
+NumPy - default - first/validation: 165ms
+NumPy - default - median: 163ms
+***** Testing NumPy with contour_integral on the M dataset *****
+NumPy - default - first/validation: 418ms
+NumPy - default - median: 73ms
+***** Testing NumPy with conv2d_bias on the M dataset *****
+NumPy - default - first/validation: 356ms
+NumPy - default - median: 53ms
+***** Testing NumPy with correlation on the M dataset *****
+NumPy - default - first/validation: 55ms
+NumPy - default - median: 42ms
+***** Testing NumPy with covariance on the M dataset *****
+NumPy - default - first/validation: 48ms
+NumPy - default - median: 37ms
+***** Testing NumPy with covariance2 on the M dataset *****
+NumPy - default - first/validation: 32ms
+NumPy - default - median: 15ms
+***** Testing NumPy with crc16 on the M dataset *****
+NumPy - default - first/validation: 21ms
+NumPy - default - median: 20ms
+***** Testing NumPy with deriche on the M dataset *****
+NumPy - default - first/validation: 65ms
+NumPy - default - median: 59ms
+***** Testing NumPy with doitgen on the M dataset *****
+NumPy - default - first/validation: 59ms
+NumPy - default - median: 59ms
+***** Testing NumPy with durbin on the M dataset *****
+NumPy - default - first/validation: 366ms
+NumPy - default - median: 60ms
+***** Testing NumPy with fdtd_2d on the M dataset *****
+NumPy - default - first/validation: 107ms
+NumPy - default - median: 106ms
+***** Testing NumPy with floyd_warshall on the M dataset *****
+NumPy - default - first/validation: 49ms
+NumPy - default - median: 52ms
+***** Testing NumPy with gemm on the M dataset *****
+NumPy - default - first/validation: 26ms
+NumPy - default - median: 24ms
+***** Testing NumPy with gemver on the M dataset *****
+NumPy - default - first/validation: 45ms
+NumPy - default - median: 45ms
+***** Testing NumPy with gesummv on the M dataset *****
+NumPy - default - first/validation: 10ms
+NumPy - default - median: 7ms
+***** Testing NumPy with go_fast on the M dataset *****
+NumPy - default - first/validation: 310ms
+NumPy - default - median: 13ms
+***** Testing NumPy with gramschmidt on the M dataset *****
+NumPy - default - first/validation: 52ms
+NumPy - default - median: 41ms
+***** Testing NumPy with hdiff on the M dataset *****
+NumPy - default - first/validation: 396ms
+NumPy - default - median: 84ms
+***** Testing NumPy with heat_3d on the M dataset *****
+NumPy - default - first/validation: 61ms
+NumPy - default - median: 59ms
+***** Testing NumPy with jacobi_1d on the M dataset *****
+NumPy - default - first/validation: 62ms
+NumPy - default - median: 62ms
+***** Testing NumPy with jacobi_2d on the M dataset *****
+NumPy - default - first/validation: 91ms
+NumPy - default - median: 91ms
+***** Testing NumPy with k2mm on the M dataset *****
+NumPy - default - first/validation: 30ms
+NumPy - default - median: 28ms
+***** Testing NumPy with k3mm on the M dataset *****
+NumPy - default - first/validation: 26ms
+NumPy - default - median: 26ms
+***** Testing NumPy with lenet on the M dataset *****
+NumPy - default - first/validation: 357ms
+NumPy - default - median: 52ms
+***** Testing NumPy with lu on the M dataset *****
+NumPy - default - first/validation: 74ms
+NumPy - default - median: 58ms
+***** Testing NumPy with ludcmp on the M dataset *****
+NumPy - default - first/validation: 75ms
+NumPy - default - median: 59ms
+***** Testing NumPy with mandelbrot1 on the M dataset *****
+NumPy - default - first/validation: 94ms
+NumPy - default - median: 92ms
+***** Testing NumPy with mandelbrot2 on the M dataset *****
+NumPy - default - first/validation: 95ms
+NumPy - default - median: 86ms
+***** Testing NumPy with mlp on the M dataset *****
+NumPy - default - first/validation: 352ms
+NumPy - default - median: 38ms
+***** Testing NumPy with mvt on the M dataset *****
+NumPy - default - first/validation: 23ms
+NumPy - default - median: 21ms
+***** Testing NumPy with nbody on the M dataset *****
+NumPy - default - first/validation: 23ms
+NumPy - default - median: 22ms
+***** Testing NumPy with nussinov on the M dataset *****
+NumPy - default - first/validation: 46ms
+NumPy - default - median: 46ms
+***** Testing NumPy with resnet on the M dataset *****
+NumPy - default - first/validation: 363ms
+NumPy - default - median: 54ms
+***** Testing NumPy with scattering_self_energies on the M dataset *****
+NumPy - default - first/validation: 320ms
+NumPy - default - median: 38ms
+***** Testing NumPy with seidel_2d on the M dataset *****
+NumPy - default - first/validation: 53ms
+NumPy - default - median: 53ms
+***** Testing NumPy with softmax on the M dataset *****
+NumPy - default - first/validation: 368ms
+NumPy - default - median: 59ms
+***** Testing NumPy with spmv on the M dataset *****
+NumPy - default - first/validation: 62ms
+NumPy - default - median: 61ms
+***** Testing NumPy with stockham_fft on the M dataset *****
+NumPy - default - first/validation: 403ms
+NumPy - default - median: 74ms
+***** Testing NumPy with symm on the M dataset *****
+NumPy - default - first/validation: 42ms
+NumPy - default - median: 41ms
+***** Testing NumPy with syr2k on the M dataset *****
+NumPy - default - first/validation: 50ms
+NumPy - default - median: 50ms
+***** Testing NumPy with syrk on the M dataset *****
+NumPy - default - first/validation: 40ms
+NumPy - default - median: 40ms
+***** Testing NumPy with trisolv on the M dataset *****
+NumPy - default - first/validation: 16ms
+NumPy - default - median: 14ms
+***** Testing NumPy with trmm on the M dataset *****
+NumPy - default - first/validation: 45ms
+NumPy - default - median: 45ms
+***** Testing NumPy with vadv on the M dataset *****
+NumPy - default - first/validation: 124ms
+NumPy - default - median: 109ms
+
+command - python run_framework.py -f numpy -p L
+
+***** Testing NumPy with adi on the L dataset *****
+NumPy - default - first/validation: 710ms
+NumPy - default - median: 714ms
+***** Testing NumPy with arc_distance on the L dataset *****
+NumPy - default - first/validation: 409ms
+NumPy - default - median: 93ms
+***** Testing NumPy with atax on the L dataset *****
+NumPy - default - first/validation: 100ms
+NumPy - default - median: 98ms
+***** Testing NumPy with azimint_hist on the L dataset *****
+NumPy - default - first/validation: 822ms
+NumPy - default - median: 823ms
+***** Testing NumPy with azimint_naive on the L dataset *****
+NumPy - default - first/validation: 104578ms
+first_execution took too long
+Implementation "default" timed out.
+***** Testing NumPy with bicg on the L dataset *****
+NumPy - default - first/validation: 100ms
+NumPy - default - median: 98ms
+***** Testing NumPy with cavity_flow on the L dataset *****
+NumPy - default - first/validation: 977ms
+NumPy - default - median: 668ms
+***** Testing NumPy with channel_flow on the L dataset *****
+NumPy - default - first/validation: 7387ms
+NumPy - default - median: 7308ms
+***** Testing NumPy with cholesky on the L dataset *****
+NumPy - default - first/validation: 515ms
+NumPy - default - median: 473ms
+***** Testing NumPy with cholesky2 on the L dataset *****
+NumPy - default - first/validation: 587ms
+NumPy - default - median: 594ms
+***** Testing NumPy with compute on the L dataset *****
+NumPy - default - first/validation: 1789ms
+NumPy - default - median: 1735ms
+***** Testing NumPy with contour_integral on the L dataset *****
+NumPy - default - first/validation: 1003ms
+NumPy - default - median: 599ms
+***** Testing NumPy with conv2d_bias on the L dataset *****
+NumPy - default - first/validation: 967ms
+NumPy - default - median: 645ms
+***** Testing NumPy with correlation on the L dataset *****
+NumPy - default - first/validation: 511ms
+NumPy - default - median: 509ms
+***** Testing NumPy with covariance on the L dataset *****
+NumPy - default - first/validation: 415ms
+NumPy - default - median: 434ms
+***** Testing NumPy with covariance2 on the L dataset *****
+NumPy - default - first/validation: 142ms
+NumPy - default - median: 132ms
+***** Testing NumPy with crc16 on the L dataset *****
+NumPy - default - first/validation: 204ms
+NumPy - default - median: 204ms
+***** Testing NumPy with deriche on the L dataset *****
+NumPy - default - first/validation: 590ms
+NumPy - default - median: 603ms
+***** Testing NumPy with doitgen on the L dataset *****
+NumPy - default - first/validation: 396ms
+NumPy - default - median: 383ms
+***** Testing NumPy with durbin on the L dataset *****
+NumPy - default - first/validation: 943ms
+NumPy - default - median: 994ms
+***** Testing NumPy with fdtd_2d on the L dataset *****
+NumPy - default - first/validation: 906ms
+NumPy - default - median: 903ms
+***** Testing NumPy with floyd_warshall on the L dataset *****
+NumPy - default - first/validation: 878ms
+NumPy - default - median: 872ms
+***** Testing NumPy with gemm on the L dataset *****
+NumPy - default - first/validation: 267ms
+NumPy - default - median: 242ms
+***** Testing NumPy with gemver on the L dataset *****
+NumPy - default - first/validation: 448ms
+NumPy - default - median: 449ms
+***** Testing NumPy with gesummv on the L dataset *****
+NumPy - default - first/validation: 111ms
+NumPy - default - median: 109ms
+***** Testing NumPy with go_fast on the L dataset *****
+NumPy - default - first/validation: 416ms
+NumPy - default - median: 102ms
+***** Testing NumPy with gramschmidt on the L dataset *****
+NumPy - default - first/validation: 533ms
+NumPy - default - median: 494ms
+***** Testing NumPy with hdiff on the L dataset *****
+NumPy - default - first/validation: 1101ms
+NumPy - default - median: 744ms
+***** Testing NumPy with heat_3d on the L dataset *****
+NumPy - default - first/validation: 802ms
+NumPy - default - median: 799ms
+***** Testing NumPy with jacobi_1d on the L dataset *****
+NumPy - default - first/validation: 689ms
+NumPy - default - median: 685ms
+***** Testing NumPy with jacobi_2d on the L dataset *****
+NumPy - default - first/validation: 960ms
+NumPy - default - median: 952ms
+***** Testing NumPy with k2mm on the L dataset *****
+NumPy - default - first/validation: 372ms
+NumPy - default - median: 301ms
+***** Testing NumPy with k3mm on the L dataset *****
+NumPy - default - first/validation: 381ms
+NumPy - default - median: 300ms
+***** Testing NumPy with lenet on the L dataset *****
+NumPy - default - first/validation: 867ms
+NumPy - default - median: 554ms
+***** Testing NumPy with lu on the L dataset *****
+NumPy - default - first/validation: 672ms
+NumPy - default - median: 633ms
+***** Testing NumPy with ludcmp on the L dataset *****
+NumPy - default - first/validation: 582ms
+NumPy - default - median: 540ms
+***** Testing NumPy with mandelbrot1 on the L dataset *****
+NumPy - default - first/validation: 1188ms
+NumPy - default - median: 1174ms
+***** Testing NumPy with mandelbrot2 on the L dataset *****
+NumPy - default - first/validation: 315ms
+NumPy - default - median: 295ms
+***** Testing NumPy with mlp on the L dataset *****
+NumPy - default - first/validation: 484ms
+NumPy - default - median: 162ms
+***** Testing NumPy with mvt on the L dataset *****
+NumPy - default - first/validation: 97ms
+NumPy - default - median: 95ms
+***** Testing NumPy with nbody on the L dataset *****
+NumPy - default - first/validation: 506ms
+NumPy - default - median: 195ms
+***** Testing NumPy with nussinov on the L dataset *****
+NumPy - default - first/validation: 482ms
+NumPy - default - median: 482ms
+***** Testing NumPy with resnet on the L dataset *****
+NumPy - default - first/validation: 927ms
+NumPy - default - median: 596ms
+***** Testing NumPy with scattering_self_energies on the L dataset *****
+NumPy - default - first/validation: 728ms
+NumPy - default - median: 408ms
+***** Testing NumPy with seidel_2d on the L dataset *****
+NumPy - default - first/validation: 575ms
+NumPy - default - median: 575ms
+***** Testing NumPy with softmax on the L dataset *****
+NumPy - default - first/validation: 964ms
+NumPy - default - median: 691ms
+***** Testing NumPy with spmv on the L dataset *****
+NumPy - default - first/validation: 502ms
+NumPy - default - median: 496ms
+***** Testing NumPy with stockham_fft on the L dataset *****
+NumPy - default - first/validation: 1368ms
+NumPy - default - median: 981ms
+***** Testing NumPy with symm on the L dataset *****
+NumPy - default - first/validation: 487ms
+NumPy - default - median: 483ms
+***** Testing NumPy with syr2k on the L dataset *****
+NumPy - default - first/validation: 523ms
+NumPy - default - median: 518ms
+***** Testing NumPy with syrk on the L dataset *****
+NumPy - default - first/validation: 487ms
+NumPy - default - median: 487ms
+***** Testing NumPy with trisolv on the L dataset *****
+NumPy - default - first/validation: 52ms
+NumPy - default - median: 51ms
+***** Testing NumPy with trmm on the L dataset *****
+NumPy - default - first/validation: 493ms
+NumPy - default - median: 492ms
+***** Testing NumPy with vadv on the L dataset *****
+NumPy - default - first/validation: 838ms
+NumPy - default - median: 823ms
+
+command - python run_framework.py -f dpnp_cpu -p S
+
+***** Testing Dpnp_CPU with adi on the S dataset *****
+NumPy - default - validation: 8ms
+Dpnp_CPU - default - first/validation: 1193ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 1182ms
+***** Testing Dpnp_CPU with atax on the S dataset *****
+NumPy - default - validation: 5ms
+Dpnp_CPU - default - first/validation: 15ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 0ms
+***** Testing Dpnp_CPU with bicg on the S dataset *****
+NumPy - default - validation: 5ms
+Dpnp_CPU - default - first/validation: 6ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 0ms
+***** Testing Dpnp_CPU with cavity_flow on the S dataset *****
+NumPy - default - validation: 7ms
+Dpnp_CPU - default - first/validation: 368ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 334ms
+***** Testing Dpnp_CPU with channel_flow on the S dataset *****
+NumPy - default - validation: 399ms
+Dpnp_CPU - default - first/validation: 30796ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 30785ms
+***** Testing Dpnp_CPU with cholesky on the S dataset *****
+NumPy - default - validation: 7ms
+Dpnp_CPU - default - first/validation: 738ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 704ms
+***** Testing Dpnp_CPU with cholesky2 on the S dataset *****
+NumPy - default - validation: 18ms
+Dpnp_CPU - default - first/validation: 210ms
+Relative error: 0.9999990214284047
+Dpnp_CPU - default did not validate!
+Dpnp_CPU - default - median: 3ms
+***** Testing Dpnp_CPU with contour_integral on the S dataset *****
+NumPy - default - validation: 332ms
+Dpnp_CPU - default - first/validation: 125ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 47ms
+***** Testing Dpnp_CPU with conv2d_bias on the S dataset *****
+NumPy - default - validation: 313ms
+Dpnp_CPU - default - first/validation: 45ms
+Relative error: 1.0
+Dpnp_CPU - default did not validate!
+Dpnp_CPU - default - median: 2ms
+***** Testing Dpnp_CPU with covariance on the S dataset *****
+NumPy - default - validation: 20ms
+Dpnp_CPU - default - first/validation: 288ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 255ms
+***** Testing Dpnp_CPU with covariance2 on the S dataset *****
+NumPy - default - validation: 13ms
+Dpnp_CPU - default - first/validation: 43ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 1ms
+***** Testing Dpnp_CPU with crc16 on the S dataset *****
+NumPy - default - validation: 2ms
+Dpnp_CPU - default - first/validation: 2510ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 2477ms
+***** Testing Dpnp_CPU with fdtd_2d on the S dataset *****
+NumPy - default - validation: 6ms
+Dpnp_CPU - default - first/validation: 35ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 25ms
+***** Testing Dpnp_CPU with gemm on the S dataset *****
+NumPy - default - validation: 6ms
+Dpnp_CPU - default - first/validation: 43ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 1ms
+***** Testing Dpnp_CPU with hdiff on the S dataset *****
+NumPy - default - validation: 280ms
+Dpnp_CPU - default - first/validation: 19ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 2ms
+***** Testing Dpnp_CPU with heat_3d on the S dataset *****
+NumPy - default - validation: 5ms
+Dpnp_CPU - default - first/validation: 87ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 65ms
+***** Testing Dpnp_CPU with jacobi_1d on the S dataset *****
+NumPy - default - validation: 6ms
+Dpnp_CPU - default - first/validation: 376ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 371ms
+***** Testing Dpnp_CPU with jacobi_2d on the S dataset *****
+NumPy - default - validation: 5ms
+Dpnp_CPU - default - first/validation: 50ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 54ms
+***** Testing Dpnp_CPU with k2mm on the S dataset *****
+NumPy - default - validation: 14ms
+Dpnp_CPU - default - first/validation: 48ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 1ms
+***** Testing Dpnp_CPU with lu on the S dataset *****
+NumPy - default - validation: 5ms
+Dpnp_CPU - default - first/validation: 425ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 411ms
+***** Testing Dpnp_CPU with mandelbrot1 on the S dataset *****
+NumPy - default - validation: 10ms
+Dpnp_CPU - default - first/validation: 148ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 66ms
+***** Testing Dpnp_CPU with nbody on the S dataset *****
+NumPy - default - validation: 3ms
+Dpnp_CPU - default - first/validation: 277ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 230ms
+***** Testing Dpnp_CPU with scattering_self_energies on the S dataset *****
+NumPy - default - validation: 272ms
+Dpnp_CPU - default - first/validation: 777ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 752ms
+***** Testing Dpnp_CPU with seidel_2d on the S dataset *****
+NumPy - default - validation: 7ms
+Dpnp_CPU - default - first/validation: 1841ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 1840ms
+***** Testing Dpnp_CPU with softmax on the S dataset *****
+NumPy - default - validation: 332ms
+Dpnp_CPU - default - first/validation: 23ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 1ms
+***** Testing Dpnp_CPU with stockham_fft on the S dataset *****
+NumPy - default - validation: 275ms
+Dpnp_CPU - default - first/validation: 132ms
+Relative error: 1.0
+Dpnp_CPU - default did not validate!
+Dpnp_CPU - default - median: 23ms
+***** Testing Dpnp_CPU with trisolv on the S dataset *****
+NumPy - default - validation: 4ms
+Dpnp_CPU - default - first/validation: 339ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 328ms
+***** Testing Dpnp_CPU with vadv on the S dataset *****
+NumPy - default - validation: 7ms
+Dpnp_CPU - default - first/validation: 139ms
+Relative error: 6.0982135439212435
+Dpnp_CPU - default did not validate!
+Dpnp_CPU - default - median: 132ms
+
+Failed: 26 out of 54 for dpnp_cpu on S preset
+arc_distance
+azimint_hist
+azimint_naive
+compute
+correlation
+deriche
+doitgen
+durbin
+floyd_warshall
+gemver
+gesummv
+go_fast
+gramschmidt
+k3mm
+lenet
+ludcmp
+mandelbrot2
+mlp
+mvt
+nussinov
+resnet
+spmv
+symm
+syr2k
+syrk
+trmm
+
+
+command - python run_framework.py -f dpnp_cpu -p M
+***** Testing Dpnp_CPU with adi on the M dataset *****
+NumPy - default - validation: 78ms
+Dpnp_CPU - default - first/validation: 9377ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 9516ms
+***** Testing Dpnp_CPU with atax on the M dataset *****
+NumPy - default - validation: 23ms
+Dpnp_CPU - default - first/validation: 6ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 0ms
+***** Testing Dpnp_CPU with bicg on the M dataset *****
+NumPy - default - validation: 24ms
+Dpnp_CPU - default - first/validation: 6ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 0ms
+***** Testing Dpnp_CPU with cavity_flow on the M dataset *****
+NumPy - default - validation: 358ms
+Dpnp_CPU - default - first/validation: 904ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 901ms
+***** Testing Dpnp_CPU with channel_flow on the M dataset *****
+NumPy - default - validation: 1534ms
+Dpnp_CPU - default - first/validation: 48263ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 53239ms
+***** Testing Dpnp_CPU with cholesky on the M dataset *****
+NumPy - default - validation: 64ms
+Dpnp_CPU - default - first/validation: 12061ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 6177ms
+***** Testing Dpnp_CPU with cholesky2 on the M dataset *****
+NumPy - default - validation: 78ms
+Dpnp_CPU - default - first/validation: 250ms
+Relative error: 0.9999997981122909
+Dpnp_CPU - default did not validate!
+Dpnp_CPU - default - median: 6ms
+***** Testing Dpnp_CPU with contour_integral on the M dataset *****
+NumPy - default - validation: 415ms
+Dpnp_CPU - default - first/validation: 154ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 103ms
+***** Testing Dpnp_CPU with conv2d_bias on the M dataset *****
+NumPy - default - validation: 357ms
+Dpnp_CPU - default - first/validation: 45ms
+Relative error: 0.9999998807907104
+Dpnp_CPU - default did not validate!
+Dpnp_CPU - default - median: 10ms
+***** Testing Dpnp_CPU with covariance on the M dataset *****
+NumPy - default - validation: 50ms
+Dpnp_CPU - default - first/validation: 766ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 737ms
+***** Testing Dpnp_CPU with covariance2 on the M dataset *****
+NumPy - default - validation: 32ms
+Dpnp_CPU - default - first/validation: 43ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 2ms
+***** Testing Dpnp_CPU with crc16 on the M dataset *****
+NumPy - default - validation: 20ms
+Dpnp_CPU - default - first/validation: 24336ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 24291ms
+***** Testing Dpnp_CPU with fdtd_2d on the M dataset *****
+NumPy - default - validation: 107ms
+Dpnp_CPU - default - first/validation: 81ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 68ms
+***** Testing Dpnp_CPU with gemm on the M dataset *****
+NumPy - default - validation: 25ms
+Dpnp_CPU - default - first/validation: 93ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 4ms
+***** Testing Dpnp_CPU with hdiff on the M dataset *****
+NumPy - default - validation: 387ms
+Dpnp_CPU - default - first/validation: 13ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 4ms
+***** Testing Dpnp_CPU with heat_3d on the M dataset *****
+NumPy - default - validation: 61ms
+Dpnp_CPU - default - first/validation: 163ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 137ms
+***** Testing Dpnp_CPU with jacobi_1d on the M dataset *****
+NumPy - default - validation: 62ms
+Dpnp_CPU - default - first/validation: 1388ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 1401ms
+***** Testing Dpnp_CPU with jacobi_2d on the M dataset *****
+NumPy - default - validation: 90ms
+Dpnp_CPU - default - first/validation: 74ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 67ms
+***** Testing Dpnp_CPU with k2mm on the M dataset *****
+NumPy - default - validation: 31ms
+Dpnp_CPU - default - first/validation: 119ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 5ms
+***** Testing Dpnp_CPU with lu on the M dataset *****
+NumPy - default - validation: 75ms
+Dpnp_CPU - default - first/validation: 5594ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 5494ms
+***** Testing Dpnp_CPU with mandelbrot1 on the M dataset *****
+NumPy - default - validation: 95ms
+Dpnp_CPU - default - first/validation: 191ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 162ms'
+***** Testing Dpnp_CPU with nbody on the M dataset *****
+NumPy - default - validation: 23ms
+Dpnp_CPU - default - first/validation: 1564ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 1523ms
+***** Testing Dpnp_CPU with scattering_self_energies on the M dataset *****
+NumPy - default - validation: 308ms
+Dpnp_CPU - default - first/validation: 5183ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 5068ms
+***** Testing Dpnp_CPU with seidel_2d on the M dataset *****
+NumPy - default - validation: 53ms
+Dpnp_CPU - default - first/validation: 14752ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 14751ms
+***** Testing Dpnp_CPU with softmax on the M dataset *****
+NumPy - default - validation: 373ms
+Dpnp_CPU - default - first/validation: 9ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 1ms'
+***** Testing Dpnp_CPU with stockham_fft on the M dataset *****
+NumPy - default - validation: 378ms
+Dpnp_CPU - default - first/validation: 113ms
+Relative error: 1.0
+Dpnp_CPU - default did not validate!
+Dpnp_CPU - default - median: 33ms
+***** Testing Dpnp_CPU with trisolv on the M dataset *****
+NumPy - default - validation: 16ms
+Dpnp_CPU - default - first/validation: 825ms
+Dpnp_CPU - default - default - validation: SUCCESS
+Dpnp_CPU - default - median: 808ms
+***** Testing Dpnp_CPU with vadv on the M dataset *****
+NumPy - default - validation: 125ms
+Dpnp_CPU - default - first/validation: 242ms
+Relative error: 7.9935853384764375
+Dpnp_CPU - default did not validate!
+Dpnp_CPU - default - median: 233ms
+
+Failed: 26 out of 54 for dpnp_cpu with preset M
+arc_distance
+azimint_hist
+azimint_naive
+compute
+correlation
+deriche
+doitgen
+durbin
+floyd_warshall
+gemver
+gesummv
+go_fast
+gramschmidt
+k3mm
+lenet
+ludcmp
+mandelbrot2
+mlp
+mvt
+nussinov
+resnet
+spmv
+symm
+syr2k
+syrk
+trmm
+
+command - python run_framework.py -f dpnp_cpu -p L
+
+
+
+command - python run_framework.py -f dpnp_gpu -p S
+
+***** Testing Dpnp_GPU with adi on the S dataset *****
+NumPy - default - validation: 8ms
+Dpnp_GPU - default - first/validation: 1649ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 1665ms
+***** Testing Dpnp_GPU with atax on the S dataset *****
+NumPy - default - validation: 10ms
+Dpnp_GPU - default - first/validation: 6ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 0ms
+***** Testing Dpnp_GPU with bicg on the S dataset *****
+NumPy - default - validation: 5ms
+Dpnp_GPU - default - first/validation: 6ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 0ms
+***** Testing Dpnp_GPU with cavity_flow on the S dataset *****
+NumPy - default - validation: 7ms
+Dpnp_GPU - default - first/validation: 466ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 454ms
+***** Testing Dpnp_GPU with channel_flow on the S dataset *****
+NumPy - default - validation: 400ms
+Dpnp_GPU - default - first/validation: 38944ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 39015ms
+***** Testing Dpnp_GPU with cholesky on the S dataset *****
+NumPy - default - validation: 8ms
+Dpnp_GPU - default - first/validation: 1382ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 1368ms
+***** Testing Dpnp_GPU with cholesky2 on the S dataset *****
+NumPy - default - validation: 19ms
+Dpnp_GPU - default - first/validation: 205ms
+Relative error: 0.9999990214284047
+Dpnp_GPU - default did not validate!
+Dpnp_GPU - default - median: 6ms
+***** Testing Dpnp_GPU with contour_integral on the S dataset *****
+NumPy - default - validation: 338ms
+Dpnp_GPU - default - first/validation: 122ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 74ms
+***** Testing Dpnp_GPU with conv2d_bias on the S dataset *****
+NumPy - default - validation: 353ms
+Dpnp_GPU - default - first/validation: 38ms
+Relative error: 0.8639804124832153
+Dpnp_GPU - default did not validate!
+Dpnp_GPU - default - median: 2ms
+***** Testing Dpnp_GPU with covariance on the S dataset *****
+NumPy - default - validation: 15ms
+Dpnp_GPU - default - first/validation: 331ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 309ms
+***** Testing Dpnp_GPU with covariance2 on the S dataset *****
+NumPy - default - validation: 15ms
+Dpnp_GPU - default - first/validation: 45ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 1ms
+***** Testing Dpnp_GPU with crc16 on the S dataset *****
+NumPy - default - validation: 2ms
+Dpnp_GPU - default - first/validation: 3699ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 3668ms
+***** Testing Dpnp_GPU with fdtd_2d on the S dataset *****
+NumPy - default - validation: 6ms
+Dpnp_GPU - default - first/validation: 41ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 35ms
+***** Testing Dpnp_GPU with gemm on the S dataset *****
+NumPy - default - validation: 10ms
+Dpnp_GPU - default - first/validation: 49ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 1ms
+***** Testing Dpnp_GPU with hdiff on the S dataset *****
+NumPy - default - validation: 303ms
+Dpnp_GPU - default - first/validation: 12ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 3ms
+***** Testing Dpnp_GPU with heat_3d on the S dataset *****
+NumPy - default - validation: 5ms
+Dpnp_GPU - default - first/validation: 94ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 95ms
+***** Testing Dpnp_GPU with jacobi_1d on the S dataset *****
+NumPy - default - validation: 7ms
+Dpnp_GPU - default - first/validation: 536ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 536ms
+***** Testing Dpnp_GPU with jacobi_2d on the S dataset *****
+NumPy - default - validation: 5ms
+Dpnp_GPU - default - first/validation: 69ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 67ms
+***** Testing Dpnp_GPU with k2mm on the S dataset *****
+NumPy - default - validation: 13ms
+Dpnp_GPU - default - first/validation: 51ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 1ms
+***** Testing Dpnp_GPU with lu on the S dataset *****
+NumPy - default - validation: 6ms
+Dpnp_GPU - default - first/validation: 825ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 813ms
+***** Testing Dpnp_GPU with mandelbrot1 on the S dataset *****
+NumPy - default - validation: 10ms
+Dpnp_GPU - default - first/validation: 179ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 124ms
+***** Testing Dpnp_GPU with nbody on the S dataset *****
+NumPy - default - validation: 3ms
+Dpnp_GPU - default - first/validation: 349ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 321ms
+***** Testing Dpnp_GPU with scattering_self_energies on the S dataset *****
+NumPy - default - validation: 340ms
+Dpnp_GPU - default - first/validation: 838ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 818ms
+***** Testing Dpnp_GPU with seidel_2d on the S dataset *****
+NumPy - default - validation: 7ms
+Dpnp_GPU - default - first/validation: 3131ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 3113ms
+***** Testing Dpnp_GPU with softmax on the S dataset *****
+NumPy - default - validation: 386ms
+Dpnp_GPU - default - first/validation: 9ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 1ms
+***** Testing Dpnp_GPU with stockham_fft on the S dataset *****
+NumPy - default - validation: 339ms
+Dpnp_GPU - default - first/validation: 100ms
+Relative error: 1.0
+Dpnp_GPU - default did not validate!
+Dpnp_GPU - default - median: 27ms
+***** Testing Dpnp_GPU with trisolv on the S dataset *****
+NumPy - default - validation: 5ms
+Dpnp_GPU - default - first/validation: 750ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 743ms
+***** Testing Dpnp_GPU with vadv on the S dataset *****
+NumPy - default - validation: 7ms
+Dpnp_GPU - default - first/validation: 167ms
+Relative error: 6.0982135439212435
+Dpnp_GPU - default did not validate!
+Dpnp_GPU - default - median: 165ms
+Failed: 26 out of 54
+arc_distance
+azimint_hist
+azimint_naive
+compute
+correlation
+deriche
+doitgen
+durbin
+floyd_warshall
+gemver
+gesummv
+go_fast
+gramschmidt
+k3mm
+lenet
+ludcmp
+mandelbrot2
+mlp
+mvt
+nussinov
+resnet
+spmv
+symm
+syr2k
+syrk
+trmm
+
+
+
+
+
+command - python run_framework.py -f dpnp_gpu -p M
+***** Testing Dpnp_GPU with adi on the M dataset *****
+NumPy - default - validation: 78ms
+Dpnp_GPU - default - first/validation: 9398ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 9427ms
+***** Testing Dpnp_GPU with atax on the M dataset *****
+NumPy - default - validation: 24ms
+Dpnp_GPU - default - first/validation: 6ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 0ms
+***** Testing Dpnp_GPU with bicg on the M dataset *****
+NumPy - default - validation: 24ms
+Dpnp_GPU - default - first/validation: 6ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 0ms
+***** Testing Dpnp_GPU with cavity_flow on the M dataset *****
+NumPy - default - validation: 358ms
+Dpnp_GPU - default - first/validation: 913ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 901ms
+***** Testing Dpnp_GPU with channel_flow on the M dataset *****
+NumPy - default - validation: 1527ms
+Dpnp_GPU - default - first/validation: 41868ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 42125ms
+***** Testing Dpnp_GPU with cholesky on the M dataset *****
+NumPy - default - validation: 64ms
+Dpnp_GPU - default - first/validation: 6292ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 6258ms
+***** Testing Dpnp_GPU with cholesky2 on the M dataset *****
+NumPy - default - validation: 76ms
+Dpnp_GPU - default - first/validation: 248ms
+Relative error: 0.9999997981122909
+Dpnp_GPU - default did not validate!
+Dpnp_GPU - default - median: 6ms
+***** Testing Dpnp_GPU with contour_integral on the M dataset *****
+NumPy - default - validation: 464ms
+Dpnp_GPU - default - first/validation: 138ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 104ms
+***** Testing Dpnp_GPU with conv2d_bias on the M dataset *****
+NumPy - default - validation: 365ms
+Dpnp_GPU - default - first/validation: 46ms
+Relative error: 0.9999998807907104
+Dpnp_GPU - default did not validate!
+Dpnp_GPU - default - median: 10ms
+***** Testing Dpnp_GPU with covariance on the M dataset *****
+NumPy - default - validation: 74ms
+Dpnp_GPU - default - first/validation: 823ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 795ms
+***** Testing Dpnp_GPU with covariance2 on the M dataset *****
+NumPy - default - validation: 33ms
+Dpnp_GPU - default - first/validation: 54ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 2ms
+***** Testing Dpnp_GPU with crc16 on the M dataset *****
+NumPy - default - validation: 21ms
+Dpnp_GPU - default - first/validation: 24502ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 24609ms
+***** Testing Dpnp_GPU with fdtd_2d on the M dataset *****
+NumPy - default - validation: 107ms
+Dpnp_GPU - default - first/validation: 94ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 81ms
+***** Testing Dpnp_GPU with gemm on the M dataset *****
+NumPy - default - validation: 25ms
+Dpnp_GPU - default - first/validation: 91ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 4ms
+***** Testing Dpnp_GPU with hdiff on the M dataset *****
+NumPy - default - validation: 384ms
+Dpnp_GPU - default - first/validation: 13ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 4ms
+***** Testing Dpnp_GPU with heat_3d on the M dataset *****
+NumPy - default - validation: 60ms
+Dpnp_GPU - default - first/validation: 161ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 137ms
+***** Testing Dpnp_GPU with jacobi_1d on the M dataset *****
+NumPy - default - validation: 62ms
+Dpnp_GPU - default - first/validation: 1409ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 1400ms
+***** Testing Dpnp_GPU with jacobi_2d on the M dataset *****
+NumPy - default - validation: 92ms
+Dpnp_GPU - default - first/validation: 75ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 68ms
+***** Testing Dpnp_GPU with k2mm on the M dataset *****
+NumPy - default - validation: 28ms
+Dpnp_GPU - default - first/validation: 121ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 5ms
+***** Testing Dpnp_GPU with mandelbrot1 on the M dataset *****
+NumPy - default - validation: 95ms
+Dpnp_GPU - default - first/validation: 192ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 162ms
+***** Testing Dpnp_GPU with nbody on the M dataset *****
+NumPy - default - validation: 22ms
+Dpnp_GPU - default - first/validation: 1741ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 1675ms
+***** Testing Dpnp_GPU with scattering_self_energies on the M dataset *****
+NumPy - default - validation: 307ms
+Dpnp_GPU - default - first/validation: 5424ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 5230ms
+***** Testing Dpnp_GPU with seidel_2d on the M dataset *****
+NumPy - default - validation: 53ms
+Dpnp_GPU - default - first/validation: 14726ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 14681ms
+***** Testing Dpnp_GPU with softmax on the M dataset *****
+NumPy - default - validation: 376ms
+Dpnp_GPU - default - first/validation: 9ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 2ms
+***** Testing Dpnp_GPU with stockham_fft on the M dataset *****
+NumPy - default - validation: 374ms
+Dpnp_GPU - default - first/validation: 107ms
+Relative error: 1.0
+Dpnp_GPU - default did not validate!
+Dpnp_GPU - default - median: 33ms
+***** Testing Dpnp_GPU with trisolv on the M dataset *****
+NumPy - default - validation: 16ms
+Dpnp_GPU - default - first/validation: 834ms
+Dpnp_GPU - default - default - validation: SUCCESS
+Dpnp_GPU - default - median: 817ms
+***** Testing Dpnp_GPU with vadv on the M dataset *****
+NumPy - default - validation: 121ms
+Dpnp_GPU - default - first/validation: 249ms
+Relative error: 7.9935853384764375
+Dpnp_GPU - default did not validate!
+Dpnp_GPU - default - median: 229ms
+Failed: 26 out of 54
+arc_distance
+azimint_hist
+azimint_naive
+compute
+correlation
+deriche
+doitgen
+durbin
+floyd_warshall
+gemver
+gesummv
+go_fast
+gramschmidt
+k3mm
+lenet
+ludcmp
+mandelbrot2
+mlp
+mvt
+nussinov
+resnet
+spmv
+symm
+syr2k
+syrk
+trmm
+
+
+
+
+
+command - python run_framework.py -f dpnp_gpu -p L
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

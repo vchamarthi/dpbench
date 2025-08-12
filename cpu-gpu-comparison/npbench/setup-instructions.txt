@@ -1,0 +1,11 @@
+Login to sprpvcbenchlin01
+
+git clone https://github.com/spcl/npbench.git
+
+cd npbench
+
+conda createc:\Users\vchamart\dev\Git-innersource\dpbench-results\npbench-results-raw.txt --name npbench  python=3.12 numpy=2.2.5 dpnp=0.18.1  scipy matplotlib pandas pip --override-channels -c https://software.repos.intel.com/python/conda -c conda-forge
+
+pip install pygount setuptools
+
+pip install .
