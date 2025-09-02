@@ -112,11 +112,11 @@ input_size,benchmark,problem_preset,numpy
 Summary of current implementation
 =================================
 input_size,benchmark,problem_preset,numpy
-0B,black_scholes,M,n/a
-256KB,gpairs,M,4375.92ms
-4GB,l2_norm,M,2878.58ms
-4GB,pairwise_distance,M,1605.68ms
-896MB,rambo,M,411.48ms
+2GB,black_scholes,M,5523.46ms
+256KB,gpairs,M,4850.83ms
+4GB,l2_norm,M,3027.25ms
+4GB,pairwise_distance,M,1895.98ms
+896MB,rambo,M,452.26ms
 
 dpbench -b black_scholes,pairwise_distance,l2_norm,rambo,gpairs -i numpy run --sycl-device=opencl:cpu --precision=single --preset L
 Legend
@@ -136,7 +136,7 @@ input_size,benchmark,problem_preset,numpy
 Summary of current implementation
 =================================
 input_size,benchmark,problem_preset,numpy
-0B,black_scholes,L,n/a
+5GB,black_scholes,L,11166.34ms
 16MB,gpairs,L,n/a
 8GB,l2_norm,L,6079.66ms
 7GB,pairwise_distance,L,3427.06ms
@@ -211,7 +211,7 @@ input_size,benchmark,problem_preset,dpnp
 5GB,black_scholes,L,3901.96ms
 16MB,gpairs,L,n/a
 8GB,l2_norm,L,1721.05ms
-7GB,pairwise_distance,L,4169.28ms
+7GB,pairwise_distance,L,3828.41ms
 1GB,rambo,L,793.8ms
 
 dpbench -b black_scholes,pairwise_distance,l2_norm,rambo,gpairs -i dpnp run --sycl-device=opencl:cpu --precision=double --preset S
@@ -329,8 +329,8 @@ input_size,benchmark,problem_preset,dpnp
 Summary of current implementation
 =================================
 input_size,benchmark,problem_preset,dpnp
-0B,black_scholes,M,n/a
-0B,gpairs,M,n/a
+2GB,black_scholes,M,2081.77ms
+256KB,gpairs,M,3497.19ms
 4GB,l2_norm,M,744.23ms
 0B,pairwise_distance,M,n/a
 896MB,rambo,M,343.54ms
