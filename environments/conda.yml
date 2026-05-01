@@ -4,10 +4,8 @@
 
 name: dpbench-dev
 channels:
-  - dppy/label/dev
   - https://software.repos.intel.com/python/conda
   - conda-forge
-  - nodefaults
 dependencies:
   - pip
   - tomli
